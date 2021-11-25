@@ -1,0 +1,258 @@
+/*  color_set  */
+
+/*------------------------------------------------------------*/
+.default-item           {                                             }
+.default-item-legend    {background-color:#808080;     color:#FFFFFF; }
+.default-item-legend a  {background-color:transparent; color:#FFFFFF; }
+.default-itemHead       {background-color:#808080;     color:#FFFFFF; }
+.default-itemHead a     {background-color:transparent; color:#FFFFFF; }
+.default-itemInfo       {background-color:#BFBFBF;     color:#FFFFFF; }
+.default-itemA          {background-color:transparent; color:#FFFFFF; }
+.default-itemBody       {background-color:#F2F2F2;     color:#000000; }
+.default-itemBody  td   {background-color:#F2F2F2;     color:#000000; }
+.default-itemBody_scoop {background-color:#F2F2F2;     color:#000000; }
+.default-itemText       {                                             }
+.default-itemFoot       {background-color:#BFBFBF;     color:#000000; }
+.default-itemFoot a     {background-color:transparent; color:#000000; }
+/*------------------------------------------------------------*/
+
+.grey1-item           {                                             }
+.grey1-item-legend    {background-color:#808080;     color:#F8F8F8; }
+.grey1-item-legend a  {background-color:transparent; color:#EAEAEA; }
+.grey1-itemHead       {background-color:#808080;     color:#FFFFFF; }
+.grey1-itemHead a     {background-color:transparent; color:#EAEAEA; }
+.grey1-itemInfo       {background-color:#BFBFBF;     color:#FFFFFF; }
+.grey1-itemA          {background-color:transparent; color:#FFFFFF; }
+.grey1-itemBody       {background-color:#F2F2F2;     color:#000000; }
+.grey1-itemBody  td   {background-color:#F2F2F2;     color:#000000; }
+.grey1-itemBody_scoop {background-color:#F2F2F2;     color:#000000; }
+.grey1-itemText       {                                             }
+.grey1-itemFoot       {background-color:#BFBFBF;     color:#000000; }
+.grey1-itemFoot a     {background-color:transparent; color:#000000; }
+/*------------------------------------------------------------*/
+
+.blue-item           {                                             }
+.blue-item-legend    {background-color:#548AC3;     color:#FFFFFF; }
+.blue-item-legend a  {background-color:transparent; color:#FFFFFF; }
+.blue-itemHead       {background-color:#548AC3;     color:#000000; }
+.blue-itemHead a     {background-color:transparent; color:#CCECFF; }
+.blue-itemInfo       {background-color:#B6CDE4;     color:#000000; }
+.blue-itemA          {background-color:transparent; color:#FFFFFF; }
+.blue-itemBody       {background-color:#E6EFEF;     color:#000000; }
+.blue-itemBody  td   {background-color:#E6EFEF;     color:#000000; }
+.blue-itemBody_scoop {background-color:#E6EFEF;     color:#000000; }
+.blue-itemText       {                                             }
+.blue-itemFoot       {background-color:#B6CDE4;     color:#000000; }
+.blue-itemFoot a     {background-color:transparent; color:#0000CC; }
+/*------------------------------------------------------------*/
+
+.blue2-item           {                                             }
+.blue2-item-legend    {background-color:#305496;     color:#CCECFF; }
+.blue2-item-legend a  {background-color:transparent; color:#CCECFF; }
+.blue2-itemHead       {background-color:#305496;     color:#FFFFFF; }
+.blue2-itemHead a     {background-color:transparent; color:#CCECFF; }
+.blue2-itemInfo       {background-color:#8EA9DB;     color:#FFFFFF; }
+.blue2-itemA          {background-color:transparent; color:#FFFFFF; }
+.blue2-itemBody       {background-color:#D9E1F2;     color:#000099; }
+.blue2-itemBody  td   {background-color:#D9E1F2;     color:#000099; }
+.blue2-itemBody_scoop {background-color:#D9E1F2;     color:#000099; }
+.blue2-itemText       {                                             }
+.blue2-itemFoot       {background-color:#8EA9DB;     color:#FFFFFF; }
+.blue2-itemFoot a     {background-color:transparent; color:#0000B4; }
+/*------------------------------------------------------------*/
+
+.green-item           {                                             }
+.green-item-legend    {background-color:#22B14C;     color:#FFFFFF; }
+.green-item-legend a  {background-color:transparent; color:#FFFFFF; }
+.green-itemHead       {background-color:#22B14C;     color:#000000; }
+.green-itemHead a     {background-color:transparent; color:#CCFFCC; }
+.green-itemInfo       {background-color:#98E0AD;     color:#000000; }
+.green-itemA          {background-color:transparent; color:#FFFFFF; }
+.green-itemBody       {background-color:#E6EFE5;     color:#000000; }
+.green-itemBody  td   {background-color:#E6EFE5;     color:#000000; }
+.green-itemBody_scoop {background-color:#E6EFE5;     color:#000000; }
+.green-itemText       {                                             }
+.green-itemFoot       {background-color:#C8EFD4;     color:#000000; }
+.green-itemFoot a     {background-color:transparent; color:#003300; }
+/*------------------------------------------------------------*/
+
+.green2-item           {                                             }
+.green2-item-legend    {background-color:#008000;     color:#FFFFFF; }
+.green2-item-legend a  {background-color:transparent; color:#FFFFFF; }
+.green2-itemHead       {background-color:#008000;     color:#FFFFFF; }
+.green2-itemHead a     {background-color:transparent; color:#CCFFFF; }
+.green2-itemInfo       {background-color:#A9D08E;     color:#FFFFFF; }
+.green2-itemA          {background-color:transparent; color:#FFFFFF; }
+.green2-itemBody       {background-color:#E2EFDA;     color:#005400; }
+.green2-itemBody  td   {background-color:#E2EFDA;     color:#005400; }
+.green2-itemBody_scoop {background-color:#E2EFDA;     color:#005400; }
+.green2-itemText       {                                             }
+.green2-itemFoot       {background-color:#A9D08E;     color:#000000; }
+.green2-itemFoot a     {background-color:transparent; color:#003A00; }
+/*------------------------------------------------------------*/
+
+.purple-item           {                                             }
+.purple-item-legend    {background-color:#7A297B;     color:#FFFFFF; }
+.purple-item-legend a  {background-color:transparent; color:#FFFFFF; }
+.purple-itemHead       {background-color:#7A297B;     color:#CC99FF; }
+.purple-itemHead a     {background-color:transparent; color:#FFCCFF; }
+.purple-itemInfo       {background-color:#C785C8;     color:#000000; }
+.purple-itemA          {background-color:transparent; color:#FFFFFF; }
+.purple-itemBody       {background-color:#EDD3ED;     color:#4C004C; }
+.purple-itemBody  td   {background-color:#EDD3ED;     color:#4C004C; }
+.purple-itemBody_scoop {background-color:#EDD3ED;     color:#4C004C; }
+.purple-itemText       {                                             }
+.purple-itemFoot       {background-color:#DAAADB;     color:#000000; }
+.purple-itemFoot a     {background-color:transparent; color:#5C005C; }
+/*------------------------------------------------------------*/
+
+.purple2-item           {                                             }
+.purple2-item-legend    {background-color:#6600FF;     color:#FFFFFF; }
+.purple2-item-legend a  {background-color:transparent; color:#FFFFFF; }
+.purple2-itemHead       {background-color:#6600FF;     color:#FFFFFF; }
+.purple2-itemHead a     {background-color:transparent; color:#FFCCFF; }
+.purple2-itemInfo       {background-color:#CC99FF;     color:#FFFFFF; }
+.purple2-itemA          {background-color:transparent; color:#FFFFFF; }
+.purple2-itemBody       {background-color:#FFCCFF;     color:#000000; }
+.purple2-itemBody  td   {background-color:#FFCCFF;     color:#000000; }
+.purple2-itemBody_scoop {background-color:#FFCCFF;     color:#000000; }
+.purple2-itemText       {                                             }
+.purple2-itemFoot       {background-color:#CC99FF;     color:#000000; }
+.purple2-itemFoot a     {background-color:transparent; color:#000000; }
+/*------------------------------------------------------------*/
+
+.red-item           {                                             }
+.red-item-legend    {background-color:#B21016;     color:#FFFFFF; }
+.red-item-legend a  {background-color:transparent; color:#FFFFFF; }
+.red-itemHead       {background-color:#B21016;     color:#FFE1E1; }
+.red-itemHead a     {background-color:transparent; color:#FFCCCC; }
+.red-itemInfo       {background-color:#F47378;     color:#000000; }
+.red-itemA          {background-color:transparent; color:#FFFFFF; }
+.red-itemBody       {background-color:#FBCFD0;     color:#680000; }
+.red-itemBody  td   {background-color:#FBCFD0;     color:#680000; }
+.red-itemBody_scoop {background-color:#FBCFD0;     color:#680000; }
+.red-itemText       {                                             }
+.red-itemFoot       {background-color:#F8A1A4;     color:#000000; }
+.red-itemFoot a     {background-color:transparent; color:#860000; }
+/*------------------------------------------------------------*/
+
+.red2-item           {                                             }
+.red2-item-legend    {background-color:#CC0000;     color:#FFFFFF; }
+.red2-item-legend a  {background-color:transparent; color:#FFFFFF; }
+.red2-itemHead       {background-color:#CC0000;     color:#FFCCFF; }
+.red2-itemHead a     {background-color:transparent; color:#FFFFFF; }
+.red2-itemInfo       {background-color:#FF5050;     color:#FFFFFF; }
+.red2-itemA          {background-color:transparent; color:#FFFFFF; }
+.red2-itemBody       {background-color:#FFCCCC;     color:#000000; }
+.red2-itemBody  td   {background-color:#FFCCCC;     color:#000000; }
+.red2-itemBody_scoop {background-color:#FFCCCC;     color:#000000; }
+.red2-itemText       {                                             }
+.red2-itemFoot       {background-color:#FF5050;     color:#000000; }
+.red2-itemFoot a     {background-color:transparent; color:#000000; }
+/*------------------------------------------------------------*/
+
+.saumon-item           {                                             }
+.saumon-item-legend    {background-color:#BF5B16;     color:#FFFFFF; }
+.saumon-item-legend a  {background-color:transparent; color:#FFFFFF; }
+.saumon-itemHead       {background-color:#BF5B16;     color:#FFCC99; }
+.saumon-itemHead a     {background-color:transparent; color:#FFCC99; }
+.saumon-itemInfo       {background-color:#FFB27D;     color:#000000; }
+.saumon-itemA          {background-color:transparent; color:#FFCC99; }
+.saumon-itemBody       {background-color:#FFE5D4;     color:#482400; }
+.saumon-itemBody  td   {background-color:#FFE5D4;     color:#482400; }
+.saumon-itemBody_scoop {background-color:#FFE5D4;     color:#482400; }
+.saumon-itemText       {                                             }
+.saumon-itemFoot       {background-color:#FFCCA9;     color:#000000; }
+.saumon-itemFoot a     {background-color:transparent; color:#663300; }
+/*------------------------------------------------------------*/
+
+.saumon2-item           {                                             }
+.saumon2-item-legend    {background-color:#BF8F00;     color:#FFFFFF; }
+.saumon2-item-legend a  {background-color:transparent; color:#FFFFFF; }
+.saumon2-itemHead       {background-color:#BF8F00;     color:#FFFFFF; }
+.saumon2-itemHead a     {background-color:transparent; color:#FFFFFF; }
+.saumon2-itemInfo       {background-color:#FFD966;     color:#4C3800; }
+.saumon2-itemA          {background-color:transparent; color:#FFFFFF; }
+.saumon2-itemBody       {background-color:#FFF2CC;     color:#000000; }
+.saumon2-itemBody  td   {background-color:#FFF2CC;     color:#000000; }
+.saumon2-itemBody_scoop {background-color:#FFF2CC;     color:#000000; }
+.saumon2-itemText       {                                             }
+.saumon2-itemFoot       {background-color:#FFD966;     color:#000000; }
+.saumon2-itemFoot a     {background-color:transparent; color:#663300; }
+/*------------------------------------------------------------*/
+
+.yellow-item           {                                             }
+.yellow-item-legend    {background-color:#BFB500;     color:#FFFFFF; }
+.yellow-item-legend a  {background-color:transparent; color:#FFFFFF; }
+.yellow-itemHead       {background-color:#BFB500;     color:#000000; }
+.yellow-itemHead a     {background-color:transparent; color:#FFFFFF; }
+.yellow-itemInfo       {background-color:#FFF766;     color:#000000; }
+.yellow-itemA          {background-color:transparent; color:#FFFFFF; }
+.yellow-itemBody       {background-color:#FFFCCC;     color:#582C00; }
+.yellow-itemBody  td   {background-color:#FFFCCC;     color:#582C00; }
+.yellow-itemBody_scoop {background-color:#FFFCCC;     color:#582C00; }
+.yellow-itemText       {                                             }
+.yellow-itemFoot       {background-color:#FFFA99;     color:#000000; }
+.yellow-itemFoot a     {background-color:transparent; color:#744D26; }
+/*------------------------------------------------------------*/
+
+.yellow2-item           {                                             }
+.yellow2-item-legend    {background-color:#CCCC00;     color:#FFFFFF; }
+.yellow2-item-legend a  {background-color:transparent; color:#FFFFFF; }
+.yellow2-itemHead       {background-color:#CCCC00;     color:#FFFFFF; }
+.yellow2-itemHead a     {background-color:transparent; color:#FFFFFF; }
+.yellow2-itemInfo       {background-color:#FFFF00;     color:#000000; }
+.yellow2-itemA          {background-color:transparent; color:#FFFFFF; }
+.yellow2-itemBody       {background-color:#FFFFCC;     color:#000000; }
+.yellow2-itemBody  td   {background-color:#FFFFCC;     color:#000000; }
+.yellow2-itemBody_scoop {background-color:#FFFFCC;     color:#000000; }
+.yellow2-itemText       {                                             }
+.yellow2-itemFoot       {background-color:#FFFF99;     color:#000000; }
+.yellow2-itemFoot a     {background-color:transparent; color:#000000; }
+/*------------------------------------------------------------*/
+
+.braun2-item           {                                             }
+.braun2-item-legend    {background-color:#C65911;     color:#FFFFFF; }
+.braun2-item-legend a  {background-color:transparent; color:#FFFFFF; }
+.braun2-itemHead       {background-color:#C65911;     color:#FFFFFF; }
+.braun2-itemHead a     {background-color:transparent; color:#FFFFFF; }
+.braun2-itemInfo       {background-color:#F4B084;     color:#FFFFFF; }
+.braun2-itemA          {background-color:transparent; color:#FFFFFF; }
+.braun2-itemBody       {background-color:#FCE4D6;     color:#000000; }
+.braun2-itemBody  td   {background-color:#FCE4D6;     color:#000000; }
+.braun2-itemBody_scoop {background-color:#FCE4D6;     color:#000000; }
+.braun2-itemText       {                                             }
+.braun2-itemFoot       {background-color:#F4B084;     color:#000000; }
+.braun2-itemFoot a     {background-color:transparent; color:#600020; }
+/*------------------------------------------------------------*/
+
+.France-item           {                                             }
+.France-item-legend    {background-color:#0033CC;     color:#FFFFFF; }
+.France-item-legend a  {background-color:transparent; color:#FFFFFF; }
+.France-itemHead       {background-color:#0033CC;     color:#FFFFFF; }
+.France-itemHead a     {background-color:transparent; color:#FFFFFF; }
+.France-itemInfo       {background-color:#3366FF;     color:#FFFFFF; }
+.France-itemA          {background-color:transparent; color:#FFFFFF; }
+.France-itemBody       {background-color:#FFFFFF;     color:#000000; }
+.France-itemBody  td   {background-color:#FFFFFF;     color:#000000; }
+.France-itemBody_scoop {background-color:#FFFFFF;     color:#000000; }
+.France-itemText       {                                             }
+.France-itemFoot       {background-color:#FF0000;     color:#000000; }
+.France-itemFoot a     {background-color:transparent; color:#000000; }
+/*------------------------------------------------------------*/
+
+.allBlack-item           {                                             }
+.allBlack-item-legend    {background-color:#000000;     color:#FFFFFF; }
+.allBlack-item-legend a  {background-color:transparent; color:#FFFFFF; }
+.allBlack-itemHead       {background-color:#000000;     color:#FFFFFF; }
+.allBlack-itemHead a     {background-color:transparent; color:#EAEAEA; }
+.allBlack-itemInfo       {background-color:#DDDDDD;     color:#000000; }
+.allBlack-itemA          {background-color:transparent; color:#FFFFFF; }
+.allBlack-itemBody       {background-color:#B2B2B2;     color:#000000; }
+.allBlack-itemBody  td   {background-color:#B2B2B2;     color:#000000; }
+.allBlack-itemBody_scoop {background-color:#B2B2B2;     color:#000000; }
+.allBlack-itemText       {                                             }
+.allBlack-itemFoot       {background-color:#000000;     color:#FFFFFF; }
+.allBlack-itemFoot a     {background-color:transparent; color:#B2B2B2; }
+/*------------------------------------------------------------*/
+

@@ -1,0 +1,249 @@
+[Config]
+Compilator.SaveAll=0
+Compilator.Capture=0
+Compilator.CompileOnBackground=0
+Compilator.ProgSaveAll=0
+Compilator.ProgRunSelection=0
+Compilator.LogType=0
+DefaultDir=Z:\Modules Pour CDS\news-1.72\news
+DefaultCP=0
+LogtoEnd=1
+DontOpen=0
+AbsolutePath=0
+FileFormat=0
+ProjectFilesOnly=0
+HTServer=localhost
+Extensions=*.*
+[Project tree]
+_news
+	+JJD
+		..\..\include\comment_view.php
+		..\..\install\sql\mysql.structure.sql
+		..\system\templates\system_comments_flat.tpl
+		..\system\templates\system_comments_flat.html
+		..\..\include\comment_post.php
+		..\..\class\commentrenderer.php
+	+news
+		+admin
+			admin\about.php
+			admin\admin_footer.php
+			admin\admin_header.php
+			admin\amsimport.php
+			admin\functions.php
+			admin\groupperms.php
+			admin\index.html
+			admin\index.php
+			admin\menu.php
+			admin\upgrade.php
+		+assets
+			+css
+				assets\css\index.html
+				assets\css\print.css
+				assets\css\style.css
+				assets\css\style-item-color.css
+				assets\css\style-item-design.css
+			-images
+				-topics
+					assets\images\topics\blank.png
+					assets\images\topics\index.html
+					assets\images\topics\xoops.gif
+				assets\images\active.gif
+				assets\images\bg.png
+				assets\images\hover.gif
+				assets\images\index.html
+				assets\images\left_both.png
+				assets\images\logoModule.png
+				assets\images\news.png
+				assets\images\right_both.png
+				assets\images\selected.gif
+				assets\images\selected_left_F90.gif
+				assets\images\selected_right_F90.gif
+				assets\images\selectedEnd.gif
+				assets\images\selectedStart.gif
+				assets\images\unselected.gif
+				assets\images\unselected_left.gif
+				assets\images\unselected_right.gif
+				assets\images\unselectedEnd.gif
+			-js
+				assets\js\index.html
+			assets\index.html
+		+blocks
+			blocks\index.html
+			blocks\news_archives.php
+			blocks\news_bigstory.php
+			blocks\news_block_tag.php
+			blocks\news_menu_xbootstrap.php
+			blocks\news_moderate.php
+			blocks\news_randomnews.php
+			blocks\news_top.php
+			blocks\news_topics.php
+			blocks\news_topicsnav.php
+		-class
+			-plugins
+				class\plugins\index.html
+				class\plugins\plugin.tag.php
+			class\blacklist.php
+			class\class.mimetype.php
+			class\class.newsstory.php
+			class\class.newstopic.php
+			class\class.sfiles.php
+			class\index.html
+			class\keyhighlighter.class.php
+			class\news_stories.php
+			class\news_topics.php
+			class\registryfile.php
+			class\tree.php
+			class\utility.php
+			class\xoopsstory.php
+			class\xoopstopic.php
+			class\xoopstree.php
+		-docs
+			docs\changelog.txt
+			docs\credits.txt
+			docs\index.html
+			docs\install.txt
+			docs\lang_diff.txt
+			docs\licence.txt
+			docs\readme.txt
+			docs\upgrade.txt
+		-extra
+			-modules
+				extra\modules\index.html
+			extra\index.html
+		+include
+			+versions
+				include\versions\version-01-70.php
+				include\versions\version-01-80.php
+			include\comment_functions.php
+			include\constantes.php
+			include\functions.php
+			include\index.html
+			include\install_function.php
+			include\notification.inc.php
+			include\search.inc.php
+			include\storyform.inc.php
+			include\storyform.original.php
+			include\update_function.php
+		-language
+			-english
+				-help
+					language\english\help\disclaimer.tpl
+					language\english\help\help.tpl
+					language\english\help\helpheader.tpl
+					language\english\help\index.html
+					language\english\help\license.tpl
+					language\english\help\support.tpl
+				-mail_template
+					language\english\mail_template\category_newstory_notify.tpl
+					language\english\mail_template\global_newcategory_notify.tpl
+					language\english\mail_template\global_newstory_notify.tpl
+					language\english\mail_template\global_storysubmit_notify.tpl
+					language\english\mail_template\index.html
+					language\english\mail_template\story_approve_notify.tpl
+					language\english\mail_template\topic_newstory_notify.tpl
+				language\english\admin.php
+				language\english\blocks.php
+				language\english\index.html
+				language\english\main.php
+				language\english\modinfo.php
+				language\english\newsletter.php
+			+french
+				-help
+					language\french\help\help.html
+					language\french\help\index.html
+				-mail_template
+					language\french\mail_template\category_newstory_notify.tpl
+					language\french\mail_template\global_newcategory_notify.tpl
+					language\french\mail_template\global_newstory_notify.tpl
+					language\french\mail_template\global_storysubmit_notify.tpl
+					language\french\mail_template\index.html
+					language\french\mail_template\story_approve_notify.tpl
+					language\french\mail_template\topic_newstory_notify.tpl
+				language\french\admin.php
+				language\french\blocks.php
+				language\french\index.html
+				language\french\main.php
+				language\french\modinfo.php
+				language\french\newsletter.php
+			language\index.html
+		-seo
+			seo\.htaccess
+			seo\index.html
+		+sql
+			sql\index.html
+			sql\mysql.sql
+		+templates
+			+blocks
+				templates\blocks\index.html
+				templates\blocks\news_block_archives.tpl
+				templates\blocks\news_block_bigstory.tpl
+				templates\blocks\news_block_menu_xbootstrap.tpl
+				templates\blocks\news_block_moderate.tpl
+				templates\blocks\news_block_randomnews.tpl
+				templates\blocks\news_block_top.tpl
+				templates\blocks\news_block_topicnav.tpl
+				templates\blocks\news_block_topics.tpl
+				templates\blocks\news_tag_block_cloud.tpl
+				templates\blocks\news_tag_block_top.tpl
+			templates\index.html
+			templates\news_archive.tpl
+			templates\news_article.tpl
+			templates\news_by_this_author.tpl
+			templates\news_by_topic.tpl
+			templates\news_index.tpl
+			templates\news_item.tpl
+			templates\news_ratenews.tpl
+			templates\news_rss.tpl
+			templates\news_topic_color_set.tpl
+			templates\news_topics_directory.tpl
+			templates\news_whos_who.tpl
+		-tests
+			-sahi
+				tests\sahi\index.html
+			tests\index.html
+		.gitattributes
+		.gitignore
+		.scrutinizer.yml
+		_news.ppr
+		archive.php
+		article.php
+		backendt.php
+		comment_delete.php
+		comment_edit.php
+		comment_new.php
+		comment_post.php
+		comment_reply.php
+		config.php
+		CONTRIBUTING.md
+		header.php
+		index.php
+		list.tag.php
+		makepdf.php
+		micro_summary.php
+		newsbythisauthor.php
+		notification_update.php
+		print.php
+		ratenews.php
+		README.md
+		submit.php
+		topics_directory.php
+		view.tag.php
+		visit.php
+		whoswho.php
+		xoops_version.php
+[Open project files]
+0=blocks\news_menu_xbootstrap.php
+1=class\xoopstree.php
+2=sql\mysql.sql
+[Selected Project Files]
+Main=
+Selected=blocks\news_menu_xbootstrap.php
+[blocks\news_menu_xbootstrap.php]
+TopLine=43
+Caret=1,73
+[class\xoopstree.php]
+TopLine=335
+Caret=1,353
+[sql\mysql.sql]
+TopLine=1
+Caret=7,5

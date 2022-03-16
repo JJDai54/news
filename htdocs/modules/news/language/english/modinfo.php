@@ -184,7 +184,7 @@ define('_MI_DISPLAYTOPIC_TITLEDSC', 'display Topic title link right before the n
 define('_MI_NEWS_DIRNAME', basename(dirname(dirname(__DIR__))));
 define('_MI_NEWS_HELP_HEADER', __DIR__ . '/help/helpheader.tpl');
 define('_MI_NEWS_BACK_2_ADMIN', 'Back to Administration of ');
-define('_MI_NEWS_OVERVIEW', 'Vue d'ensemble');
+define('_MI_NEWS_OVERVIEW', "Overview");
 
 //define('_MI_NEWS_HELP_DIR', __DIR__);
 
@@ -192,3 +192,6 @@ define('_MI_NEWS_OVERVIEW', 'Vue d'ensemble');
 define('_MI_NEWS_DISCLAIMER', 'Disclaimer');
 define('_MI_NEWS_LICENSE', 'License');
 define('_MI_NEWS_SUPPORT', 'Support');
+
+define('_MI_NEWS_CODE_READMORE', 'Replacement code for /Read more/');
+define('_MI_NEWS_CODE_READMORE_DESC', "Replace this code in the scoop with a link to the full article");

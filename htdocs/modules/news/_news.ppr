@@ -5,26 +5,18 @@ Compilator.CompileOnBackground=0
 Compilator.ProgSaveAll=0
 Compilator.ProgRunSelection=0
 Compilator.LogType=0
-DefaultDir=Z:\Modules Pour CDS\news-1.72\news
+DefaultDir=J:\Xoops\modules-JJD\news\Projet\htdocs\modules\news
 DefaultCP=0
 LogtoEnd=1
 DontOpen=0
 AbsolutePath=0
 FileFormat=0
 ProjectFilesOnly=0
-HTServer=localhost
 Extensions=*.*
 [Project tree]
-_news
-	+JJD
-		..\..\include\comment_view.php
-		..\..\install\sql\mysql.structure.sql
-		..\system\templates\system_comments_flat.tpl
-		..\system\templates\system_comments_flat.html
-		..\..\include\comment_post.php
-		..\..\class\commentrenderer.php
+news
 	+news
-		+admin
+		-admin
 			admin\about.php
 			admin\admin_footer.php
 			admin\admin_header.php
@@ -35,14 +27,32 @@ _news
 			admin\index.php
 			admin\menu.php
 			admin\upgrade.php
-		+assets
-			+css
+		-assets
+			-css
+				-old
+					assets\css\old\style-item-color.css
+					assets\css\old\style-item-design.css
 				assets\css\index.html
 				assets\css\print.css
 				assets\css\style.css
 				assets\css\style-item-color.css
 				assets\css\style-item-design.css
 			-images
+				-deco
+					assets\images\deco\arrow.gif
+					assets\images\deco\bg.png
+					assets\images\deco\date.gif
+					assets\images\deco\dateout.gif
+					assets\images\deco\favoris.png
+					assets\images\deco\favorisout.png
+					assets\images\deco\index.html
+					assets\images\deco\info.png
+					assets\images\deco\left_both.png
+					assets\images\deco\more.png
+					assets\images\deco\right_both.png
+					assets\images\deco\tableft4.gif
+					assets\images\deco\tabright4.gif
+					assets\images\deco\tdmdownloads_search.png
 				-topics
 					assets\images\topics\blank.png
 					assets\images\topics\index.html
@@ -65,16 +75,17 @@ _news
 				assets\images\unselected_right.gif
 				assets\images\unselectedEnd.gif
 			-js
+				assets\js\config_highslide.js
 				assets\js\index.html
 			assets\index.html
-		+blocks
+		-blocks
 			blocks\index.html
 			blocks\news_archives.php
 			blocks\news_bigstory.php
 			blocks\news_block_tag.php
-			blocks\news_menu_xbootstrap.php
 			blocks\news_moderate.php
 			blocks\news_randomnews.php
+			blocks\news_selection.php
 			blocks\news_top.php
 			blocks\news_topics.php
 			blocks\news_topicsnav.php
@@ -110,8 +121,9 @@ _news
 			-modules
 				extra\modules\index.html
 			extra\index.html
-		+include
-			+versions
+		-include
+			-versions
+				include\versions\index.html
 				include\versions\version-01-70.php
 				include\versions\version-01-80.php
 			include\comment_functions.php
@@ -147,7 +159,7 @@ _news
 				language\english\main.php
 				language\english\modinfo.php
 				language\english\newsletter.php
-			+french
+			-french
 				-help
 					language\french\help\help.html
 					language\french\help\index.html
@@ -169,26 +181,26 @@ _news
 		-seo
 			seo\.htaccess
 			seo\index.html
-		+sql
+		-sql
 			sql\index.html
 			sql\mysql.sql
-		+templates
-			+blocks
+		-templates
+			-blocks
 				templates\blocks\index.html
 				templates\blocks\news_block_archives.tpl
 				templates\blocks\news_block_bigstory.tpl
-				templates\blocks\news_block_menu_xbootstrap.tpl
 				templates\blocks\news_block_moderate.tpl
 				templates\blocks\news_block_randomnews.tpl
 				templates\blocks\news_block_top.tpl
+				templates\blocks\news_block_top-02.tpl
 				templates\blocks\news_block_topicnav.tpl
 				templates\blocks\news_block_topics.tpl
 				templates\blocks\news_tag_block_cloud.tpl
-				templates\blocks\news_tag_block_top.tpl
 			templates\index.html
 			templates\news_archive.tpl
 			templates\news_article.tpl
 			templates\news_by_this_author.tpl
+			templates\news_by_this_author-02.tpl
 			templates\news_by_topic.tpl
 			templates\news_index.tpl
 			templates\news_item.tpl
@@ -217,6 +229,7 @@ _news
 		CONTRIBUTING.md
 		header.php
 		index.php
+		letter.php
 		list.tag.php
 		makepdf.php
 		micro_summary.php
@@ -232,18 +245,5 @@ _news
 		whoswho.php
 		xoops_version.php
 [Open project files]
-0=blocks\news_menu_xbootstrap.php
-1=class\xoopstree.php
-2=sql\mysql.sql
 [Selected Project Files]
 Main=
-Selected=blocks\news_menu_xbootstrap.php
-[blocks\news_menu_xbootstrap.php]
-TopLine=43
-Caret=1,73
-[class\xoopstree.php]
-TopLine=335
-Caret=1,353
-[sql\mysql.sql]
-TopLine=1
-Caret=7,5

@@ -198,6 +198,15 @@ $story['topic_title'] = $article->textlink();
 
 $story['text'] = $article->hometext();
 $bodytext      = $article->bodytext();
+//---------------------------
+//JJDai - ajout dans a la fin du exte de readmore
+$posReadMore = strripos($story['text'], NewsUtility::getModuleOption('readmore'));
+$lgReadMore = strlen(NEWS_READMORE);
+if ($posReadMore > ($introcount-20)){
+$story['text'] = substr($story['text'],0,$posReadMore) . substr($story['text'], $posReadMore + $lgReadMore);
+}
+// pour des tests$story['text'] .= " ({$posReadMore})";
+//-----------------------------
 
 if ('' !== xoops_trim($bodytext)) {
     $articletext = [];
@@ -557,9 +566,10 @@ $xoopsTpl->assign('pathIcon16', $pathIcon16);
 //Add style css
 $xoTheme->addStylesheet('modules/news/assets/css/style.css');
 //$highslide = 'highslide'; //4113
-$highslide = 'highslide-500';
+$highslide = 'highslide';
 $xoTheme->addScript(XOOPS_URL . "/Frameworks/{$highslide}/highslide.js");
-$xoTheme->addScript(XOOPS_URL . "/Frameworks/{$highslide}/xoops_highslide.js");
+//$xoTheme->addScript(XOOPS_URL . "/Frameworks/{$highslide}/xoops_highslide.js");
+$xoTheme->addScript(XOOPS_URL . "/modules/news/assets/js/config_highslide.js");
 $xoTheme->addStylesheet(XOOPS_URL ."/Frameworks/{$highslide}/highslide.css");
 news_load_css();
 

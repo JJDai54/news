@@ -289,7 +289,7 @@ switch ($op) {
         require_once XOOPS_ROOT_PATH . '/modules/news/include/storyform.inc.php';
         break;
 
-    case 'post':
+    case 'post':  //save
         $nohtml_db = isset($_POST['nohtml']) ? $_POST['nohtml'] : 1;
         if (is_object($xoopsUser)) {
             $uid = $xoopsUser->getVar('uid');

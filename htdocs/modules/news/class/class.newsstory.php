@@ -856,7 +856,6 @@ class NewsStory extends MyXoopsStory
 
         $story['text'] = $this->hometext();
         $story['text'] = str_replace('[summary]', $auto_summary, $story['text']);
-
         //$story['picture'] = XOOPS_URL.'/uploads/news/image/'.$this->picture();
         if ('' !== $this->picture()) {
             $story['picture'] = XOOPS_URL . '/uploads/news/image/' . $this->picture();
@@ -876,6 +875,16 @@ class NewsStory extends MyXoopsStory
         //si body n'est pas vide on ajoute un lien sur l'article complet
         if ($fullcount > 1) {
             $morelink = "<a href='{$linkStory}'><b>" . _MD_NEWS_READMORE . "</b><img src='{$pathIcon16}/forward.png'>" .  "</a>";
+            $morelink2 = "<a href='{$linkStory}'>" . " <img src='{$pathIcon16}/forward.png'> <b>" . _MD_NEWS_READMORE .  "</b></a>";
+            //---------------------------
+            //JJDai - ajout dans a la fin du exte de readmore
+            $posReadMore = strripos($story['text'], NewsUtility::getModuleOption('readmore'));
+            $lgReadMore = strlen(NEWS_READMORE);
+            if ($posReadMore > ($introcount-20)){
+            $story['text'] = substr($story['text'],0,$posReadMore) . $morelink2 . substr($story['text'], $posReadMore + $lgReadMore);
+            }
+            // pour des tests$story['text'] .= " ({$posReadMore})";
+            //-----------------------------
 
             //JJDai inutile d'ajouter le nombre d'octet qui n'est pas uneinformation pertinente
             //$morelink .= ' | ' . sprintf(_MD_NEWS_BYTESMORE, $totalcount);

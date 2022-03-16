@@ -404,9 +404,10 @@ $xoopsTpl->assign('lang_reads', _MD_NEWS_VIEWS);
 $xoopsTpl->assign('lang_morereleases', _MD_NEWS_MORERELEASES);
 
 //$highslide = 'highslide'; //4113
-$highslide = 'highslide-500';
+$highslide = 'highslide';
 $xoTheme->addScript(XOOPS_URL . "/Frameworks/{$highslide}/highslide.js");
-$xoTheme->addScript(XOOPS_URL . "/Frameworks/{$highslide}/xoops_highslide.js");
+//$xoTheme->addScript(XOOPS_URL . "/Frameworks/{$highslide}/xoops_highslide.js");
+$xoTheme->addScript(XOOPS_URL . "/modules/news/assets/js/config_highslide.js");
 $xoTheme->addStylesheet(XOOPS_URL ."/Frameworks/{$highslide}/highslide.css");
 
 news_load_css();

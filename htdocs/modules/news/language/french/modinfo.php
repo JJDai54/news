@@ -218,10 +218,6 @@ define("_MI_NEWS_OVERVIEW","Vue d'ensemble");
 define('_MI_DISPLAYTOPIC_TITLE', 'Afficher le sujet avec news_title');
 define('_MI_DISPLAYTOPIC_TITLEDSC', 'Afficher le lien du titre du sujet juste avant le titre de la nouvelle');
 
-// JJDai
-define('_MI_NEWS_MENU_XBOOTSTRAP', 'news - Menu pour theme xbootstrap');
-define('_MI_NEWS_MENU_XBOOTSTRAP_DSC', 'Block pour menu du theme xbootstrap');
-
 define('_MI_NEWS_SHOW_TPL_NAME', 'Afficher le nom des templates');
 define('_MI_NEWS_SHOW_TPL_NAME_DESC', 'Option à utiliser pour le développement, la désactiver en production');
 
@@ -235,6 +231,8 @@ define ('_MI_NEWS_COLOR_SET_DESC', 'Défini le jeu de couleur par défaut des ar
 define ('_MI_COUNT_ADMIN_READ', 'Lecture des administrateurs');
 define ('_MI_COUNT_ADMIN_READ_DESC', 'Compte les lectures des adminstrateurs.<br>attention pendant la mise en place ou l\'écriture d\'un article cela risque d\'augmenter artificiellement le nombre de lecture des articles.');
 
+define ('_MI_NEWS_CODE_READMORE', 'Code de remplacement pour /Lire la suite/');
+define ('_MI_NEWS_CODE_READMORE_DESC', "Remplace ce code dans le scoop par un lien sur l'article complet");
 
 /**
  * @translation     Communauté Francophone des Utilisateurs de Xoops

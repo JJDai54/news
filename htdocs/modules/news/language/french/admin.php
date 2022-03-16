@@ -77,6 +77,7 @@ define("_AM_NEWS_GENERALCONF","Configuration générale");
 
 // Added in RC2
 define("_AM_NEWS_TOPICDISPLAY","Afficher l'image du sujet ?");
+define("_AM_NEWS_AT","&nbsp; à &nbsp;");
 define("_AM_NEWS_TOPICALIGN","Position");
 define("_AM_NEWS_RIGHT","Droite");
 define("_AM_NEWS_LEFT","Gauche");

@@ -61,12 +61,25 @@ if (NewsUtility::checkVerXoops($GLOBALS['xoopsModule'], '2.5.9')) {
 
 if ($approveprivilege) {
     //Show topic image?
+
+    //JJDai - regroupement des deux champs YN et position    
+    $imgCat_tray = new XoopsFormElementTray(_AM_NEWS_TOPICDISPLAY, '');
+    $imgTopicInput = new XoopsFormRadioYN('', 'topicdisplay', $topicdisplay);
+    $imgPosInput = new XoopsFormSelect(_AM_NEWS_AT, 'topicalign', $topicalign);
+    $imgPosInput->addOption('R', _AM_NEWS_RIGHT);
+    $imgPosInput->addOption('L', _AM_NEWS_LEFT);
+    
+    $imgCat_tray->addElement($imgTopicInput);
+    $imgCat_tray->addElement($imgPosInput);
+    $sform->addElement($imgCat_tray);
+/*
     $sform->addElement(new XoopsFormRadioYN(_AM_NEWS_TOPICDISPLAY, 'topicdisplay', $topicdisplay));
     //Select image position
     $posselect = new XoopsFormSelect(_AM_NEWS_TOPICALIGN, 'topicalign', $topicalign);
     $posselect->addOption('R', _AM_NEWS_RIGHT);
     $posselect->addOption('L', _AM_NEWS_LEFT);
     $sform->addElement($posselect);
+*/    
     //Publish in home?
     //TODO: Check that pubinhome is 0 = no and 1 = yes (currently vice versa)
     $sform->addElement(new XoopsFormRadioYN(_AM_NEWS_PUBINHOME, 'ihome', $ihome, _NO, _YES));

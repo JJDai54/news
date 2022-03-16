@@ -23,9 +23,9 @@ include_once XOOPS_ROOT_PATH . '/modules/news/include/functions.php';
 // defined('XOOPS_ROOT_PATH') || exit('Restricted access.');
 $moduleDirName = basename(__DIR__);
 
-$modversion['version']       = 1.82;
+$modversion['version']       = 1.84;
 $modversion['module_status'] = 'Beta 1';
-$modversion['release_date']  = '2020/08/09';
+$modversion['release_date']  = '2022/03/16';
 $modversion['name']          = _MI_NEWS_NAME;
 $modversion['description']   = _MI_NEWS_DESC;
 $modversion['credits']       = 'XOOPS Project, Christian, Pilou, Marco, <br>ALL the members of the Newbb Team, GIJOE, Zoullou, Mithrandir, <br>Setec Astronomy, Marcan, 5vision, Anne, Trabis, dhsoft, Mamba, Mage, Timgno';
@@ -194,16 +194,6 @@ $modversion['blocks'][10]['edit_func']   = 'news_tag_block_top_edit';
 $modversion['blocks'][10]['options']     = '50|30|c';
 $modversion['blocks'][10]['template']    = 'news_tag_block_top.tpl';
 
-$modversion['blocks'][] = [
-    'file'        => 'news_menu_xbootstrap.php',
-    'name'        => _MI_NEWS_MENU_XBOOTSTRAP,
-    'description' => _MI_NEWS_MENU_XBOOTSTRAP_DSC,
-    'show_func'   => 'b_news_menu_xbootstrap_show',
-    'edit_func'   => 'b_news_menu_xbootstrap_edit',
-    'options'     => '',
-    'template'    => 'news_block_menu_xbootstrap.tpl',
-];
-
 
 // Menu
 $modversion['hasMain'] = 1;
@@ -325,6 +315,17 @@ $modversion['config'][$i]['description'] = '_MI_NEWS_DATEFORMAT_DESC';
 $modversion['config'][$i]['formtype']    = 'textbox';
 $modversion['config'][$i]['valuetype']   = 'text';
 $modversion['config'][$i]['default']     = '';
+
+/**
+ * suite de caractere pour ajouer "read more" à la fin du scoop
+ */
+++$i;
+$modversion['config'][$i]['name']        = 'readmore';
+$modversion['config'][$i]['title']       = '_MI_NEWS_CODE_READMORE';
+$modversion['config'][$i]['description'] = '_MI_NEWS_CODE_READMORE_DESC';
+$modversion['config'][$i]['formtype']    = 'textbox';
+$modversion['config'][$i]['valuetype']   = 'text';
+$modversion['config'][$i]['default']     = '+++';
 
 /**
  * Display a navigation's box on the pages ?

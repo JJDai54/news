@@ -70,6 +70,7 @@ define('_AM_NEWS_POSTED', 'Posted');
 define('_AM_NEWS_GENERALCONF', 'General configuration');
 // Added in RC2
 define('_AM_NEWS_TOPICDISPLAY', 'Display topic image?');
+define("_AM_NEWS_AT","&nbsp; at &nbsp;");
 define('_AM_NEWS_TOPICALIGN', 'Position');
 define('_AM_NEWS_RIGHT', 'Right');
 define('_AM_NEWS_LEFT', 'Left');

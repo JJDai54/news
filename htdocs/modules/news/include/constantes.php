@@ -26,9 +26,6 @@ if(isset($newsHelper)){
     define ("NEWS_SHOW_TPL_NAME", 0);
 }
 
-
-
-
 define ("NEWS_DIRNAME", 'news');
 define ("NEWS_URL", XOOPS_URL . '/modules/' . NEWS_DIRNAME);
 define ("NEWS_URL_UPLOAD", XOOPS_URL . '/uploads/' . NEWS_DIRNAME . '/image');
@@ -44,5 +41,3 @@ define ("NEWS_STORY_STATUS_PERMANENT", 1);
 define ("NEWS_STORY_STATUS_NON_EXPIRED", 2);
 define ("NEWS_STORY_STATUS_EXPIRED", 3);
 define ("NEWS_STORY_STATUS_ALL", 4);
-
-

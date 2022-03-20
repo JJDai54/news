@@ -12,9 +12,10 @@ DontOpen=0
 AbsolutePath=0
 FileFormat=0
 ProjectFilesOnly=0
+HTServer=localhost
 Extensions=*.*
 [Project tree]
-news
+_news
 	+news
 		-admin
 			admin\about.php
@@ -121,7 +122,7 @@ news
 			-modules
 				extra\modules\index.html
 			extra\index.html
-		-include
+		+include
 			-versions
 				include\versions\index.html
 				include\versions\version-01-70.php
@@ -245,5 +246,30 @@ news
 		whoswho.php
 		xoops_version.php
 [Open project files]
+0=Nouveau1.txt
+1=include\constantes.php
+2=xoops_version.php
+3=article.php
+4=class\class.newsstory.php
+5=blocks\news_top.php
 [Selected Project Files]
 Main=
+Selected=include\constantes.php
+[Nouveau1.txt]
+TopLine=1
+Caret=1,1
+[include\constantes.php]
+TopLine=13
+Caret=39,45
+[xoops_version.php]
+TopLine=284
+Caret=44,323
+[article.php]
+TopLine=186
+Caret=13,203
+[class\class.newsstory.php]
+TopLine=864
+Caret=71,883
+[blocks\news_top.php]
+TopLine=212
+Caret=1,229

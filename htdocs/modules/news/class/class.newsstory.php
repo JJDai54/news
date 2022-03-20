@@ -880,7 +880,7 @@ class NewsStory extends MyXoopsStory
             //JJDai - ajout dans a la fin du exte de readmore
             $posReadMore = strripos($story['text'], NewsUtility::getModuleOption('readmore'));
             $lgReadMore = strlen(NEWS_READMORE);
-            if ($posReadMore > ($introcount-20)){
+            if ($posReadMore > ($introcount - NEWS_NB_LAST_CAR_TO_READ)){
             $story['text'] = substr($story['text'],0,$posReadMore) . $morelink2 . substr($story['text'], $posReadMore + $lgReadMore);
             }
             // pour des tests$story['text'] .= " ({$posReadMore})";

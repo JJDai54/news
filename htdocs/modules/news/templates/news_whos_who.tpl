@@ -27,7 +27,7 @@
           <{/foreach}>
       </ul>
   </div>
-  <div class="news-whoswho item  <{$colorset_author}>-itemHead item-round-bottom item-info">
+  <div class="news-whoswho <{$colorset_author}>-itemHead item-round-bottom item-info">
         <a href="<{$smarty.const.XOOPS_URL}>/modules/news/index.php?storytopic="><{$smarty.const._MD_NEWS_ALL_STORIES}></a>
  </div>
 

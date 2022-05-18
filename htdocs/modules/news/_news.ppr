@@ -28,8 +28,8 @@ _news
 			admin\index.php
 			admin\menu.php
 			admin\upgrade.php
-		-assets
-			-css
+		+assets
+			+css
 				-old
 					assets\css\old\style-item-color.css
 					assets\css\old\style-item-design.css
@@ -185,7 +185,7 @@ _news
 		-sql
 			sql\index.html
 			sql\mysql.sql
-		-templates
+		+templates
 			-blocks
 				templates\blocks\index.html
 				templates\blocks\news_block_archives.tpl
@@ -246,23 +246,23 @@ _news
 		whoswho.php
 		xoops_version.php
 [Open project files]
-0=Nouveau1.txt
-1=include\constantes.php
-2=xoops_version.php
-3=article.php
-4=class\class.newsstory.php
-5=blocks\news_top.php
+0=include\constantes.php
+1=xoops_version.php
+2=article.php
+3=class\class.newsstory.php
+4=blocks\news_top.php
+5=templates\news_by_this_author.tpl
+6=templates\news_by_this_author-02.tpl
+7=templates\news_whos_who.tpl
+8=assets\css\style-item-design.css
 [Selected Project Files]
 Main=
-Selected=include\constantes.php
-[Nouveau1.txt]
-TopLine=1
-Caret=1,1
+Selected=templates\news_whos_who.tpl
 [include\constantes.php]
 TopLine=13
 Caret=39,45
 [xoops_version.php]
-TopLine=284
+TopLine=289
 Caret=44,323
 [article.php]
 TopLine=186
@@ -273,3 +273,15 @@ Caret=71,883
 [blocks\news_top.php]
 TopLine=212
 Caret=1,229
+[templates\news_by_this_author.tpl]
+TopLine=23
+Caret=23,20
+[templates\news_by_this_author-02.tpl]
+TopLine=1
+Caret=1,1
+[templates\news_whos_who.tpl]
+TopLine=1
+Caret=28,30
+[assets\css\style-item-design.css]
+TopLine=7
+Caret=7,20

@@ -19,4 +19,5 @@
 
 include_once  '../../mainfile.php';
 include_once 'include/constantes.php';
+include_once 'include/functions.php';
 setlocale (LC_TIME, 'fr_FR.utf8','fra');

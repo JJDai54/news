@@ -191,7 +191,7 @@ require_once XOOPS_ROOT_PATH . '/header.php';
 //date_default_timezone_set('UTC');
 $story['id']          = $storyid;
 $story['posttime']    = formatTimestamp($article->published(), $dateformat);
-$story['news_title']  = $article->title();
+$story['news_title']  = addCrLf($article->title());
 $story['title']       = $article->textlink() . '&nbsp;:&nbsp;' . $article->title();
 $story['subtitle']    = $article->subtitle();
 $story['topic_title'] = $article->textlink();
@@ -201,7 +201,7 @@ $bodytext      = $article->bodytext();
 //---------------------------
 //JJDai - ajout dans a la fin du exte de readmore
 $posReadMore = strripos($story['text'], NewsUtility::getModuleOption('readmore'));
-$lgReadMore = strlen(NEWS_READMORE);
+$lgReadMore = strlen(_MD_NEWS_READMORE);
 if ($posReadMore > ($introcount - NEWS_NB_LAST_CAR_TO_READ)){
 $story['text'] = substr($story['text'],0,$posReadMore) . substr($story['text'], $posReadMore + $lgReadMore);
 }

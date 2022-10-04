@@ -94,7 +94,7 @@ function newSubmissions()
                  . $newstory->storyid()
                  . "</b></td>";
             echo "<td align='left'>\n";
-            $title = $newstory->title();
+            $title = addCrLf($newstory->title());
             if (!isset($title) || ('' === $title)) {
                 echo "<a href='" . XOOPS_URL . '/modules/news/admin/index.php?op=edit&amp;returnside=1&amp;storyid=' . $newstory->storyid() . "'>" . _MD_NEWS_NOSUBJECT . "</a>\n";
             } else {
@@ -188,7 +188,7 @@ function autoStories()
                  . '/modules/news/article.php?storyid='
                  . $autostory->storyid()
                  . "'>"
-                 . $autostory->title()
+                 . addCrLf($autostory->title());
                  . "</a>
                 </td><td align='center'>"
                  . $topic->topic_title()
@@ -277,7 +277,7 @@ function lastStories()
         $class = ('even' === $class) ? 'odd' : 'even';
         echo "<tr class='" . $class . "'>";
         echo "<td align='center'><b>" . $eachstory->storyid() . "</b>
-            </td><td align='left'><a href='" . XOOPS_URL . '/modules/news/article.php?storyid=' . $eachstory->storyid() . "'>" . $eachstory->title() . "</a>
+            </td><td align='left'><a href='" . XOOPS_URL . '/modules/news/article.php?storyid=' . $eachstory->storyid() . "'>" . addCrLf($eachstory->title()) . "</a>
             </td><td align='center'>" . $topic->topic_title() . "
             </td><td align='center'><a href='" . XOOPS_URL . '/userinfo.php?uid=' . $eachstory->uid() . "'>" . $eachstory->uname() . "</a></td><td align='center' class='nw'>" . $published . "</td><td align='center'>" . $eachstory->counter() . "</td><td align='center'>
             <a href='" . XOOPS_URL . '/modules/news/submit.php?returnside=1&amp;op=edit&amp;storyid=' . $eachstory->storyid() . "'> <img src='" . $pathIcon16 . "/edit.png' title=" . _AM_NEWS_EDIT . "> </a>
@@ -352,7 +352,7 @@ function expStories()
             $class = ('even' === $class) ? 'odd' : 'even';
             echo "<tr class='" . $class . "'>";
             echo "<td align='center'><b>" . $eachstory->storyid() . "</b>
-                </td><td align='left'><a href='" . XOOPS_URL . '/modules/news/article.php?returnside=1&amp;storyid=' . $eachstory->storyid() . "'>" . $eachstory->title() . "</a>
+                </td><td align='left'><a href='" . XOOPS_URL . '/modules/news/article.php?returnside=1&amp;storyid=' . $eachstory->storyid() . "'>" . addCrLf($eachstory->title()) . "</a>
                 </td><td align='center'>" . $topic->topic_title() . "
                 </td><td align='center'><a href='" . XOOPS_URL . '/userinfo.php?uid=' . $eachstory->uid() . "'>" . $eachstory->uname() . "</a></td><td align='center' class='nw'>" . $created . "</td><td align='center' class='nw'>" . $expired . "</td><td align='center'>
                 <a href='" . XOOPS_URL . '/modules/news/submit.php?returnside=1&amp;op=edit&amp;storyid=' . $eachstory->storyid() . "'> <img src='" . $pathIcon16 . "/edit.png' title=" . _AM_NEWS_EDIT . "></a>

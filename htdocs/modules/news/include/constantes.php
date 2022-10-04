@@ -43,3 +43,4 @@ define ("NEWS_STORY_STATUS_EXPIRED", 3);
 define ("NEWS_STORY_STATUS_ALL", 4);
 
 define ("NEWS_NB_LAST_CAR_TO_READ", 50);
+

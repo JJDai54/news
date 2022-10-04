@@ -999,7 +999,9 @@ $tblAuthors = array();
     }
  }
 
-
+function addCrLf($exp){
+    return  str_replace('\n',"<br>", $exp);
+}
 
 
 

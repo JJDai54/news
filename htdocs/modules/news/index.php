@@ -89,6 +89,9 @@ require_once XOOPS_ROOT_PATH . '/modules/news/include/functions.php';
 /**********************************************************
  *
  *********************************************************/
+function addCrLf2($exp){
+    return  str_replace('Einstein',"<br>", $exp);
+}
 
 $moduleDirName = basename(__DIR__);
 xoops_load('utility', $moduleDirName);
@@ -217,8 +220,8 @@ if ($showclassic) {
                 $story      = $thisstory->prepare2show($filescount);
                 // The line below can be used to display a Permanent Link image
                 // $story['title'] .= "&nbsp;&nbsp;<a href='".XOOPS_URL."/modules/news/article.php?storyid=".$sarray[$i]->storyid()."'><img src='".XOOPS_URL."/modules/news/assets/images/x.gif' alt='Permanent Link'></a>";
-                $story['news_title']  = $story['title'];
-                $story['title']       = $thisstory->textlink() . '&nbsp;:&nbsp;' . $story['title'];
+                $story['news_title']  = addCrLf($story['title']);
+                $story['title']       = $thisstory->textlink() . '&nbsp;:&nbsp;' . addCrLf($story['title']);
                 $story['subtitle']    = $thisstory->subtitle();
                 $story['topic_title'] = $thisstory->textlink();
                 $story['topic_color'] = '#' . $myts->displayTarea($thisstory->topic_color);
@@ -228,7 +231,7 @@ if ($showclassic) {
                 }
 
                 if ('' === $firsttitle) {
-                    $firsttitle = $thisstory->topic_title() . ' - ' . $thisstory->title();
+                    $firsttitle = $thisstory->topic_title() . ' - ' . addCrLf($thisstory->title());
                 }
                 $columns[$k][] = $story;
                 ++$k;

@@ -137,8 +137,8 @@ _news
 			include\storyform.inc.php
 			include\storyform.original.php
 			include\update_function.php
-		-language
-			-english
+		+language
+			+english
 				-help
 					language\english\help\disclaimer.tpl
 					language\english\help\help.tpl
@@ -182,7 +182,7 @@ _news
 		-seo
 			seo\.htaccess
 			seo\index.html
-		-sql
+		+sql
 			sql\index.html
 			sql\mysql.sql
 		+templates
@@ -246,42 +246,18 @@ _news
 		whoswho.php
 		xoops_version.php
 [Open project files]
-0=include\constantes.php
-1=xoops_version.php
+0=language\french\main.php
+1=class\class.newsstory.php
 2=article.php
-3=class\class.newsstory.php
-4=blocks\news_top.php
-5=templates\news_by_this_author.tpl
-6=templates\news_by_this_author-02.tpl
-7=templates\news_whos_who.tpl
-8=assets\css\style-item-design.css
 [Selected Project Files]
 Main=
-Selected=templates\news_whos_who.tpl
-[include\constantes.php]
-TopLine=13
-Caret=39,45
-[xoops_version.php]
-TopLine=289
-Caret=44,323
-[article.php]
-TopLine=186
-Caret=13,203
+Selected=class\class.newsstory.php
+[language\french\main.php]
+TopLine=1
+Caret=1,7
 [class\class.newsstory.php]
-TopLine=864
-Caret=71,883
-[blocks\news_top.php]
-TopLine=212
-Caret=1,229
-[templates\news_by_this_author.tpl]
-TopLine=23
-Caret=23,20
-[templates\news_by_this_author-02.tpl]
-TopLine=1
-Caret=1,1
-[templates\news_whos_who.tpl]
-TopLine=1
-Caret=28,30
-[assets\css\style-item-design.css]
-TopLine=7
-Caret=7,20
+TopLine=862
+Caret=37,882
+[article.php]
+TopLine=184
+Caret=25,204

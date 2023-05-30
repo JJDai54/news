@@ -28,6 +28,7 @@ define('_MI_NEWS_GROUPPERMS', 'Permissions');
 define('_MI_NEWS_PRUNENEWS', 'Purge');
 // Added by Hervé
 define('_MI_NEWS_EXPORT', 'Export');
+define('_MI_NEWS_ADMENU_MERGE', 'Fusionner des sujets');
 
 // Title of config items
 define('_MI_STORYHOME', "Combien d'article(s) sur la page principale ?");

@@ -137,7 +137,7 @@ $modversion['blocks'][3]['description'] = 'Shows top read news articles';
 $modversion['blocks'][3]['show_func']   = 'b_news_top_show';
 $modversion['blocks'][3]['edit_func']   = 'b_news_top_edit';
 $modversion['blocks'][3]['options']     = 'counter|10|25|0|0|0|0||1||||||';
-$modversion['blocks'][3]['template']    = 'news_block_top.tpl';
+$modversion['blocks'][3]['template']    = 'news_block_top_jjd.tpl';
 
 $modversion['blocks'][4]['file']        = 'news_top.php';
 $modversion['blocks'][4]['name']        = _MI_NEWS_BNAME5;
@@ -145,7 +145,7 @@ $modversion['blocks'][4]['description'] = 'Shows recent articles';
 $modversion['blocks'][4]['show_func']   = 'b_news_top_show';
 $modversion['blocks'][4]['edit_func']   = 'b_news_top_edit';
 $modversion['blocks'][4]['options']     = 'published|10|25|0|0|0|0||1||||||';
-$modversion['blocks'][4]['template']    = 'news_block_top.tpl';
+$modversion['blocks'][4]['template']    = 'news_block_top_jjd.tpl';
 
 $modversion['blocks'][5]['file']        = 'news_moderate.php';
 $modversion['blocks'][5]['name']        = _MI_NEWS_BNAME6;

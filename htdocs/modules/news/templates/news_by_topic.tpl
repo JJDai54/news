@@ -8,9 +8,9 @@
             <{section name=i loop=$columns}>
                 <td width="<{$columnwidth}>%" valign="top">
                     <{foreach item=topic from=$columns[i]}>
-                        <div class="itemBody">
-                            <div class="itemInfo"><span class="itemText"><a title="<{$topic.title}>"
-                                                                            href="<{$xoops_url}>/modules/news/index.php?storytopic=<{$topic.id}>"><{$topic.title}></a></span>
+                        <div class="item-body">
+                            <div class="item-info"><span class="item-text"><a title="<{$topic.title}>"
+                                href="<{$xoops_url}>/modules/news/index.php?storytopic=<{$topic.id}>"><{$topic.title}></a></span>
                             </div>
                             <{counter start=0 print=false assign=storynum}>
                             <{foreach item=story from=$topic.stories}>

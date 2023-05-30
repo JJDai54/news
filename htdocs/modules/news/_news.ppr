@@ -5,6 +5,7 @@ Compilator.CompileOnBackground=0
 Compilator.ProgSaveAll=0
 Compilator.ProgRunSelection=0
 Compilator.LogType=0
+Compilator.LogEncoding=0
 DefaultDir=J:\Xoops\modules-JJD\news\Projet\htdocs\modules\news
 DefaultCP=0
 LogtoEnd=1
@@ -17,7 +18,12 @@ Extensions=*.*
 [Project tree]
 _news
 	+news
-		-admin
+		+_JJD
+			..\..\..\..\..\JJD-Framework\projet\htdocs\Frameworks\JJD-Framework\css\style-item-design.css
+			..\..\..\..\..\JJD-Framework\projet\htdocs\Frameworks\JJD-Framework\css\style-item-color-old.css
+			..\..\..\..\..\JJD-Framework\projet\htdocs\Frameworks\JJD-Framework\css\style-item-color.css
+			..\..\..\..\..\JJD-Framework\projet\htdocs\Frameworks\JJD-Framework\css\style-item-design-old.css
+		+admin
 			admin\about.php
 			admin\admin_footer.php
 			admin\admin_header.php
@@ -30,9 +36,6 @@ _news
 			admin\upgrade.php
 		+assets
 			+css
-				-old
-					assets\css\old\style-item-color.css
-					assets\css\old\style-item-design.css
 				assets\css\index.html
 				assets\css\print.css
 				assets\css\style.css
@@ -79,7 +82,7 @@ _news
 				assets\js\config_highslide.js
 				assets\js\index.html
 			assets\index.html
-		-blocks
+		+blocks
 			blocks\index.html
 			blocks\news_archives.php
 			blocks\news_bigstory.php
@@ -90,7 +93,7 @@ _news
 			blocks\news_top.php
 			blocks\news_topics.php
 			blocks\news_topicsnav.php
-		-class
+		+class
 			-plugins
 				class\plugins\index.html
 				class\plugins\plugin.tag.php
@@ -160,7 +163,7 @@ _news
 				language\english\main.php
 				language\english\modinfo.php
 				language\english\newsletter.php
-			-french
+			+french
 				-help
 					language\french\help\help.html
 					language\french\help\index.html
@@ -186,7 +189,7 @@ _news
 			sql\index.html
 			sql\mysql.sql
 		+templates
-			-blocks
+			+blocks
 				templates\blocks\index.html
 				templates\blocks\news_block_archives.tpl
 				templates\blocks\news_block_bigstory.tpl
@@ -197,6 +200,7 @@ _news
 				templates\blocks\news_block_topicnav.tpl
 				templates\blocks\news_block_topics.tpl
 				templates\blocks\news_tag_block_cloud.tpl
+				templates\blocks\news_block_top_jjd.tpl
 			templates\index.html
 			templates\news_archive.tpl
 			templates\news_article.tpl
@@ -246,18 +250,62 @@ _news
 		whoswho.php
 		xoops_version.php
 [Open project files]
-0=language\french\main.php
-1=class\class.newsstory.php
-2=article.php
+0=xoops_version.php
+1=blocks\news_top.php
+2=templates\blocks\news_block_top.tpl
+3=..\..\..\..\..\glossaire\projet\htdocs\modules\glossaire\templates\blocks\glossaire_block_entries.tpl
+4=blocks\news_selection.php
+5=language\french\blocks.php
+6=language\english\blocks.php
+7=include\functions.php
+8=templates\blocks\news_block_randomnews.tpl
+9=article.php
+10=templates\news_article.tpl
+11=templates\news_topics_directory.tpl
+12=templates\news_item.tpl
+13=admin\menu.php
 [Selected Project Files]
 Main=
-Selected=class\class.newsstory.php
-[language\french\main.php]
+Selected=admin\menu.php
+[xoops_version.php]
+TopLine=98
+Caret=1,118
+[blocks\news_top.php]
+TopLine=457
+Caret=44,477
+[templates\blocks\news_block_top.tpl]
+TopLine=953
+Caret=1,988
+[..\..\..\..\..\glossaire\projet\htdocs\modules\glossaire\templates\blocks\glossaire_block_entries.tpl]
 TopLine=1
-Caret=1,7
-[class\class.newsstory.php]
-TopLine=862
-Caret=37,882
+Caret=1,23
+[blocks\news_selection.php]
+TopLine=33
+Caret=1,53
+[language\french\blocks.php]
+TopLine=36
+Caret=30,62
+[language\english\blocks.php]
+TopLine=29
+Caret=1,55
+[include\functions.php]
+TopLine=800
+Caret=1,820
+[templates\blocks\news_block_randomnews.tpl]
+TopLine=5
+Caret=13,35
 [article.php]
-TopLine=184
-Caret=25,204
+TopLine=206
+Caret=1,210
+[templates\news_article.tpl]
+TopLine=38
+Caret=27,60
+[templates\news_topics_directory.tpl]
+TopLine=10
+Caret=1,24
+[templates\news_item.tpl]
+TopLine=22
+Caret=114,36
+[admin\menu.php]
+TopLine=17
+Caret=1,51

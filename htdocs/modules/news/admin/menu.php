@@ -50,6 +50,12 @@ $adminmenu[] = [
 ];
 
 $adminmenu[] = [
+    'title' => _MI_NEWS_ADMENU_MERGE,
+    'link'  => 'admin/index.php?op=topics_merge_form',
+    'icon'  => $pathIcon32 . '/groupmod.png'
+];
+
+$adminmenu[] = [
     'title' => _MI_NEWS_GROUPPERMS,
     'link'  => 'admin/groupperms.php',
     'icon'  => $pathIcon32 . '/permissions.png'

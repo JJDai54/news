@@ -73,6 +73,7 @@ CREATE TABLE news_topics (
   topic_description TEXT                 NOT NULL,
   topic_color       VARCHAR(10)           NOT NULL DEFAULT '000000',
   topic_color_set   VARCHAR(50)          NOT NULL default '',
+  topic_actif       TINYINT(1)           NOT NULL DEFAULT '1',
   PRIMARY KEY (topic_id),
   KEY pid (topic_pid),
   KEY topic_title (topic_title),

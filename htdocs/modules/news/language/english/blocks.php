@@ -47,4 +47,9 @@ define('_MB_NEWS_UNTIL_TODAY', 'or until today');
 define('_MB_NEWS_RECENT_FIRST', 'Most recent first');
 define('_MB_NEWS_OLDER_FIRST', 'Older first');
 
+// JJDai
 define("_MB_NEWS_VIEW_TYPE3", "Simple table");
+define("_MB_NEWS_VIEW_TYPE4", "Jeu de couleurs");
+define("_MB_NEWS_APPROVE_STORYES","Valider les articles en attente d'approbation");
+define("_MB_NEWS_WHOS_WHO","Annuaire des auteurs");
+

@@ -915,7 +915,7 @@
                                 <td align='left'><{$block.spotlight.topic_description}></td>
                             </tr>
                         </table>
-                        <div class="itemBody">
+                        <div class="item-body">
                             <ul>
                                 <li><{$block.spotlight.title_with_link}></li>
                             </ul>
@@ -944,11 +944,11 @@
                 </tr>
             </table>
             <{foreach item=onenews from=$block.news}>
-                <div class="itemBody">
+                <div class="item-body">
                     <ul>
                         <li><{$onenews.title}></li>
                     </ul>
-                    <span class="itemStats">&nbsp;&nbsp;<{$onenews.author}> <{$block.lang_on}> <{$onenews.date}>
+                    <span class="item-stats">&nbsp;&nbsp;<{$onenews.author}> <{$block.lang_on}> <{$onenews.date}>
                         - <{if $block.use_rating}> <{$onenews.rating}>/10 (<{$onenews.number_votes}>)<{/if}>
                         , <{$onenews.hits}> <{$block.lang_reads}></span></div>
                 <p class="note"><{$onenews.text}></p>

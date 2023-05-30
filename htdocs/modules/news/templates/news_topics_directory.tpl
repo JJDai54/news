@@ -18,10 +18,10 @@
     <h2><{$smarty.const._AM_NEWS_TOPICS_DIRECTORY}></h2>
 <{foreach item=topic from=$topics}>
 
-  <div class="cat_item <{$topic.color_set}>-itemBody item-text item-round-all">
+  <div class="cat_item <{$topic.color_set}>-item-body item-text item-round-all">
 
     <li>
-    <{if $topic.imgurl <> ""}><img src=<{$smarty.const.NEWS_URL_UPLOAD}>/<{$topic.imgurl}> ><{/if}>
+    <{if $topic.imgurl <> ""}><img src=<{$smarty.const.NEWS_URL_UPLOAD}>/<{$topic.imgurl}> width='80px' title='' alt=''><{/if}>
     <a title="<{$topic.title}>"
         href="<{$xoops_url}>/modules/news/index.php?storytopic=<{$topic.id}>"><{$topic.title}></a>
          - <{$topic.news_count}> <{$smarty.const._MD_NEWS_ARTICLE_S}>

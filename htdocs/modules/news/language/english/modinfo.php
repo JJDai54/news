@@ -19,6 +19,8 @@ define('_MI_NEWS_SMNAME2', 'Archive');
 define('_MI_NEWS_ADMENU2', 'Topics manager');
 define('_MI_NEWS_ADMENU3', 'Post/Edit news');
 define('_MI_NEWS_GROUPPERMS', 'Permissions');
+define('_MI_NEWS_ADMENU_MERGE', 'Merge topics');
+
 // Added by Hervé for prune option
 define('_MI_NEWS_PRUNENEWS', 'Prune news');
 // Added by Hervé

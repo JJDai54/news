@@ -54,12 +54,13 @@ define("_MB_NEW_STORIES", "Actualités");
 define("_MB_NEWS_TOPICS_INDEX", "Index des catégories");
 define("_MB_NEWS_ARCHIVES", "Archives");
 
-define("_MB_NEWS_VIEW_TYPE3", "Taleau simple");
-define("_MB_NEWS_APPROVE_STORYES","Valider les articles en attente d'approbation");
-
-
 // JJDai
+define("_MB_NEWS_VIEW_TYPE3", "Taleau simple");
+define("_MB_NEWS_VIEW_TYPE4", "Jeu de couleurs");
+define("_MB_NEWS_APPROVE_STORYES","Valider les articles en attente d'approbation");
 define("_MB_NEWS_WHOS_WHO","Annuaire des auteurs");
+define("_MB_NEWS_LAST_STORIES","Les derniers articles à lire");
+define("_MB_NEWS_RANDOM_STORIES","Articles à lire au hazard");
 
 /**
  * @translation     Communauté Francophone des Utilisateurs de Xoops

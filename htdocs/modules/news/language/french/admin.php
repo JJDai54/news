@@ -238,10 +238,15 @@ define('_AM_NEWS_WEIGHT', 'Poids');
 define ('_AM_NEWS_COLOR_SET', 'Jeu de couleurs');
 define ('_AM_NEWS_COLOR_SET_DESC', 'Défini le jeu de couleurs pour ce formulaire. Les jeux de couleurs sont définis dans le CSS "style-item-color.css" du module, du theme ou du framework JJD (voir les options du module)');
 
-/**
- * @translation     Communauté Francophone des Utilisateurs de Xoops
- * @specification   _LANGCODE: fr
- * @specification   _CHARSET: UTF-8 sans Bom
- * Mis à jour par Cesag le 17 juin 2012
- * @version         $Id $
-**/
+
+define('_AM_NEWS_TOPIC_2_MERGE', "Sujets à grouper");
+define('_AM_NEWS_TOPIC_TO', "Regouper les sujets dans");
+define('_AM_NEWS_MERGE_TOPICS', "Regroupper plusieurs sujets dans un seul (important : opération irréversibles)");
+define('_AM_NEWS_MERGE_ACTION', "Grouper les sujets");
+define('_AM_NEWS_TOPIC_SELECT_ONE', "Selectionner un sujet de destination");
+define('_AM_NEWS_TOPICS_OK_2_MERGE1', "Vous avez demandé à fusionner plusieurs sujets,<br>Veuillez confirmer cette action.<br>Cette opération est irréverssible.");
+define('_AM_NEWS_TOPICS_OK_2_MERGE2', "Etes-vous vraiement certains de fusionner plusieurs sujets,<br>Cette opération est irréverssible.");
+define('_AM_NEWS_NO_TOPICS_TO_MERGE', "Aucun sujet à fusionner n'a été sélectionné");
+define('_AM_NEWS_NO_TOPICS_TO', "Aucun sujet de destination n'a été sélectionné");
+define('_AM_NEWS_NO_TOPICS_STORYS_MERGED', "%s messages ont été transférés avec succès");
+

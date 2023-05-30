@@ -23,8 +23,12 @@ require_once XOOPS_ROOT_PATH . '/modules/news/class/utility.php';
 
 /*
 sages91.fr/modules/news/article.php?storyid=296?op=last
-*/
 
 $idNews = 296;
 $url = XOOPS_URL . "/modules/news/article.php?storyid={$idNews}";
+*/
+
+$idTopic = 23;
+$url = XOOPS_URL . "/modules/news/index.php?storytopic={$idTopic}";
+
 redirect_header($url, 0, "");

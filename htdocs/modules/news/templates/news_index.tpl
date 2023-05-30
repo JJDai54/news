@@ -26,7 +26,7 @@
     <{/if}>
 
     <{if $topic_description != '' }>
-       <br> <div class="itemDescription <{$topic_color_set}>-itemHead"><{$topic_description}></div>
+       <br> <div class="itemDescription <{$topic_color_set}>-item-head"><{$topic_description}></div>
     <{/if}>
 
 

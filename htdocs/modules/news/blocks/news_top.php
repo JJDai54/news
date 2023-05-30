@@ -21,6 +21,7 @@
 
 require_once XOOPS_ROOT_PATH . '/modules/news/class/class.newsstory.php';
 require_once XOOPS_ROOT_PATH . '/modules/news/class/class.newstopic.php';
+require_once XOOPS_ROOT_PATH . '/modules/news/include/functions.php';
 
 /**
  * Notes about the spotlight :
@@ -473,7 +474,7 @@ function b_news_top_show($options)
                 $news['topicid']     = $story->topicid();
                 $news['topic_title'] = $story->topic_title();
                 $news['topic_color'] = '#' . $myts->displayTarea($story->topic_color);
-                $news['topic_color_set'] = '#' . $myts->displayTarea($story->topic_color_set);
+                $news['topic_color_set'] = $myts->displayTarea($story->topic_color_set);
                 $news['picture']     = XOOPS_URL . '/uploads/news/image/' . $story->picture();
                 $news['pictureinfo'] = $story->pictureinfo();
 
@@ -670,6 +671,12 @@ function b_news_top_edit($options)
         $form .= 'selected';
     }
     $form .= '>' . _MB_NEWS_VIEW_TYPE3 . '</option>';
+    //---------------------------------------------------------
+    $form .= "<option value='4' ";
+    if (4 == $options[8]) {
+        $form .= 'selected';
+    }
+    $form .= '>' . _MB_NEWS_VIEW_TYPE4 . '</option>';
     //---------------------------------------------------------
 
 

@@ -98,8 +98,6 @@ $xoopsTpl->assign('topics', $tbl_topics);
 
 $xoopsTpl->assign('advertisement', NewsUtility::getModuleOption('advertisement'));
 news_load_css();
-//$story['topic_color_set'] = news_get_color_set($article->topic_color_set);
-//$xoopsTpl->assign('topic_color_set', $topic_color_set);
 
 /**
  * Manage all the meta datas

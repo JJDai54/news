@@ -20,11 +20,10 @@ use Xmf\Module\Helper as xHelper;
 //$newsHelper = Xmf\Module\Helper::getHelper('news');
 
 //$newsHelper = xHelper::getHelper("news");
-if(isset($newsHelper)){
-    define ("NEWS_SHOW_TPL_NAME", $newsHelper->getConfig('displayTemplateName') );
-}else{
-    define ("NEWS_SHOW_TPL_NAME", 0);
+if(!isset($newsHelper)){
+    $newsHelper = Xmf\Module\Helper::getHelper('news');
 }
+define ("NEWS_SHOW_TPL_NAME", $newsHelper->getConfig('displayTemplateName') );
 
 define ("NEWS_DIRNAME", 'news');
 define ("NEWS_URL", XOOPS_URL . '/modules/' . NEWS_DIRNAME);

@@ -52,7 +52,7 @@
 
     <{* ------------------------------------------------------------------------- *}>
     <{* JJD - Ajout de commentaire - plus logique de mettre directement suite a l'article *}>
-    <div class="itemInfo item-round-all <{$story.topic_color_set}>-itemInfo"><{$smarty.const._COMMENTS}>
+    <div class="item-info item-round-all <{$story.topic_color_set}>-item-info"><{$smarty.const._COMMENTS}>
     <{if $fbcomments == true}>
         <div id="fb-root"></div>
         <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
@@ -61,13 +61,13 @@
     <{/if}>
 
 
-    <div class="pad2 marg2 <{$story.topic_color_set}>-itemBody_scoop">
+    <div class="pad2 marg2 <{$story.topic_color_set}>-item-body-scoop">
         <{$commentsnav}>
         <{$lang_notice}>
     </div>
 
 
-    <div class="pad2 marg2 <{$story.topic_color_set}>-itemBody_scoop">
+    <div class="pad2 marg2 <{$story.topic_color_set}>-item-body-scoop">
         <{if $comment_mode == "flat"}>
             <{include file="db:system_comments_flat.tpl"}>
         <{elseif $comment_mode == "thread"}>

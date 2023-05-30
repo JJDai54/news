@@ -32,7 +32,7 @@
  * @return bool
  */
 
-include_once ('../../mainfile.php');
+//include_once (XOOPS_ROOT_PATH . '/mainfile.php');
 include_once ('constantes.php');
 
 use WideImage\WideImage;

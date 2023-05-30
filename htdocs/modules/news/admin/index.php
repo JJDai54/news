@@ -188,12 +188,10 @@ function autoStories()
                  . '/modules/news/article.php?storyid='
                  . $autostory->storyid()
                  . "'>"
-                 . addCrLf($autostory->title());
-                 . "</a>
-                </td><td align='center'>"
+                 . addCrLf($autostory->title())
+                 . "</a></td><td align='center'>"
                  . $topic->topic_title()
-                 . "
-                </td><td align='center'><a href='"
+                 . "</td><td align='center'><a href='"
                  . XOOPS_URL
                  . '/userinfo.php?uid='
                  . $autostory->uid()
@@ -778,6 +776,99 @@ function launchExport()
 }
 
 /*
+* Topics merge form
+* formulaire de fusion de plusieurs sujets dans un seul
+* utilité du à l'usage ou certains sujets sont vide ou presque
+*/
+function topics_merge_form()
+{
+    global $xoopsDB, $xoopsConfig, $xoopsModule, $myts;
+    require_once XOOPS_ROOT_PATH . '/class/xoopsformloader.php';
+    xoops_cp_header();
+    $adminObject = \Xmf\Module\Admin::getInstance();
+    $adminObject->displayNavigation('index.php?op=topicsmanager');
+
+    $sform = new XoopsThemeForm(_AM_NEWS_MERGE_TOPICS, 'topicMergeForm', XOOPS_URL . '/modules/' . $xoopsModule->getVar('dirname') . '/admin/index.php', 'post', true);
+    //$sform->setExtra('enctype="multipart/form-data"');
+    $op  = new xoopsFormHidden('op', 'topics_confirm_merge');
+    $sform->addElement($op);
+    
+    $xt          = new NewsTopic($xoopsDB->prefix('news_topics'), 'topic_id', 'topic_pid');
+    $topics_arr  = $xt->getChildTreeArray(0, 'topic_weight,topic_title');
+    $totaltopics = count($topics_arr);
+//echo "<hr><pre>topics_arr" . print_r($topics_arr, true) . "</pre><hr>";    
+    $inpTopics2Mmerge = new XoopsFormCheckBox (_AM_NEWS_TOPIC_2_MERGE, 'news_topics2merge' , null, $delimeter = '<br>');
+    foreach($topics_arr as $k=>$v){
+        $inpTopics2Mmerge->addOption($v['topic_id'], $v['topic_title']);
+    }
+    $sform->addElement($inpTopics2Mmerge);
+
+    $inpTopicTo = new XoopsFormSelect (_AM_NEWS_TOPIC_TO, 'news_topicto' , null);
+    $inpTopicTo->addOption(0, _AM_NEWS_TOPIC_SELECT_ONE);
+    foreach($topics_arr as $k=>$v){
+        $inpTopicTo->addOption($v['topic_id'], $v['topic_title']);
+    }
+    $sform->addElement($inpTopicTo);
+    
+    
+    // Submit button
+    $button_tray = new XoopsFormElementTray('', '');
+    $submit_btn  = new XoopsFormButton('', 'post', _AM_NEWS_MERGE_ACTION, 'submit');
+    $button_tray->addElement($submit_btn);
+    $sform->addElement($button_tray);
+    $sform->display();
+
+}
+
+/*
+* Topics merge ok
+* formulaire de fusion de plusieurs sujets dans un seul
+* utilité du à l'usage ou certains sujets sont vide ou presque
+*/
+function topics_confirm_merge()
+{
+//echo "<hr><pre>POST" . print_r($_POST, true) . "</pre><hr>";    
+    global $xoopsDB, $xoopsModule;
+    xoops_cp_header();
+    
+      if(!isset($_POST['news_topics2merge'])) redirect_header('index.php?op=topics_merge_form', 2, _AM_NEWS_NO_TOPICS_TO_MERGE); 
+      if($_POST['news_topicto'] == 0) redirect_header('index.php?op=topics_merge_form', 2, _AM_NEWS_NO_TOPICS_TO); 
+      
+      $topicsToMerge = implode(',', $_POST['news_topics2merge']);
+      $params = array('op'=>'topics_merge_ok', 'topicsToMerge'=>$topicsToMerge, 'topicto'=>$_POST['news_topicto'] );
+      xoops_confirm($params, 'index.php', _AM_NEWS_TOPICS_OK_2_MERGE1);
+
+//         echo '<h4>' . _AM_NEWS_CONFIG . '</h4>';
+//         $xt = new MyXoopsTopic($xoopsDB->prefix('news_topics'), (int)$_GET['topic_id']);
+
+
+
+}
+function count_storyes_to_merge($topicsToMerge){
+    global $storiesHandler;
+    $criteria = new CriteriaCompo();
+    $criteria->add(new Criteria('topicid', "({$topicsToMerge})", "IN"));
+    $rstFrom = $storiesHandler->getAll($criteria); 
+    return count($rstFrom);
+}
+
+function topics_merge_ok()
+{
+//echo "<hr><pre>POST" . print_r($_POST, true) . "</pre><hr>";    
+    global $xoopsDB, $xoopsConfig, $xoopsModule, $myts, $topicsHandler, $storiesHandler;
+    
+    $countStorys =  count_storyes_to_merge($_POST['topicsToMerge']);
+    echo "count = " . $countStorys . "<br>";
+    
+    $sql = "UPDATE " . $xoopsDB->prefix('news_stories') 
+         . " SET topicid = {$_POST['topicto']}"
+         . " WHERE topicid IN ({$_POST['topicsToMerge']})";
+    $xoopsDB->query($sql);
+    $msg = sprintf(_AM_NEWS_NO_TOPICS_STORYS_MERGED, $countStorys);
+    redirect_header('index.php?op=topics_merge_form', 5, $msg); 
+}
+
+/*
 * Topics manager
 *
 * It's from here that you can list, add, modify an delete topics
@@ -959,158 +1050,26 @@ function topicsmanager()
         '3300FF','333300','333333','333366','333399','3333CC','3333FF','336600',
         '336633','336666','336699','3366CC','3366FF','339900','339933','339966',
         '339999','3399CC','3399FF','33CC00','33CC33','33CC66','33CC99',
-        '33CCCC',
-        '33CCFF',
-        '33FF00',
-        '33FF33',
-        '33FF66',
-        '33FF99',
-        '33FFCC',
-        '33FFFF',
-        '660000',
-        '660033',
-        '660066',
-        '660099',
-        '6600CC',
-        '6600FF',
-        '663300',
-        '663333',
-        '663366',
-        '663399',
-        '6633CC',
-        '6633FF',
-        '666600',
-        '666633',
-        '666666',
-        '666699',
-        '6666CC',
-        '6666FF',
-        '669900',
-        '669933',
-        '669966',
-        '669999',
-        '6699CC',
-        '6699FF',
-        '66CC00',
-        '66CC33',
-        '66CC66',
-        '66CC99',
-        '66CCCC',
-        '66CCFF',
-        '66FF00',
-        '66FF33',
-        '66FF66',
-        '66FF99',
-        '66FFCC',
-        '66FFFF',
-        '990000',
-        '990033',
-        '990066',
-        '990099',
-        '9900CC',
-        '9900FF',
-        '993300',
-        '993333',
-        '993366',
-        '993399',
-        '9933CC',
-        '9933FF',
-        '996600',
-        '996633',
-        '996666',
-        '996699',
-        '9966CC',
-        '9966FF',
-        '999900',
-        '999933',
-        '999966',
-        '999999',
-        '9999CC',
-        '9999FF',
-        '99CC00',
-        '99CC33',
-        '99CC66',
-        '99CC99',
-        '99CCCC',
-        '99CCFF',
-        '99FF00',
-        '99FF33',
-        '99FF66',
-        '99FF99',
-        '99FFCC',
-        '99FFFF',
-        'CC0000',
-        'CC0033',
-        'CC0066',
-        'CC0099',
-        'CC00CC',
-        'CC00FF',
-        'CC3300',
-        'CC3333',
-        'CC3366',
-        'CC3399',
-        'CC33CC',
-        'CC33FF',
-        'CC6600',
-        'CC6633',
-        'CC6666',
-        'CC6699',
-        'CC66CC',
-        'CC66FF',
-        'CC9900',
-        'CC9933',
-        'CC9966',
-        'CC9999',
-        'CC99CC',
-        'CC99FF',
-        'CCCC00',
-        'CCCC33',
-        'CCCC66',
-        'CCCC99',
-        'CCCCCC',
-        'CCCCFF',
-        'CCFF00',
-        'CCFF33',
-        'CCFF66',
-        'CCFF99',
-        'CCFFCC',
-        'CCFFFF',
-        'FF0000',
-        'FF0033',
-        'FF0066',
-        'FF0099',
-        'FF00CC',
-        'FF00FF',
-        'FF3300',
-        'FF3333',
-        'FF3366',
-        'FF3399',
-        'FF33CC',
-        'FF33FF',
-        'FF6600',
-        'FF6633',
-        'FF6666',
-        'FF6699',
-        'FF66CC',
-        'FF66FF',
-        'FF9900',
-        'FF9933',
-        'FF9966',
-        'FF9999',
-        'FF99CC',
-        'FF99FF',
-        'FFCC00',
-        'FFCC33',
-        'FFCC66',
-        'FFCC99',
-        'FFCCCC',
-        'FFCCFF',
-        'FFFF00',
-        'FFFF33',
-        'FFFF66',
-        'FFFF99',
-        'FFFFCC',
-        'FFFFFF'
+        '33CCCC','33CCFF','33FF00','33FF33','33FF66','33FF99','33FFCC',
+        '33FFFF','660000','660033','660066','660099','6600CC','6600FF',
+        '663300','663333','663366','663399','6633CC','6633FF','666600',
+        '666633','666666','666699','6666CC','669900','669933','669966',
+        '669999','6699CC','6699FF','66CC00','66CC33','66CC66','66CC99',
+        '66CCCC','66CCFF','66FF00','66FF33','66FF66','66FF99','66FFCC',
+        '66FFFF','990000','990033','990066','990099','9900CC','9900FF',
+        '993300','993333','993366','993399','9933CC','9933FF','996600','996633',
+        '996666','996699','9966CC','9966FF','999900','999933','999966','999999',
+        '9999CC','9999FF','99CC00','99CC33','99CC66','99CC99','99CCCC','99CCFF',
+        '99FF00','99FF33','99FF66','99FF99','99FFCC','99FFFF','CC0000','CC0033',
+        'CC0066','CC0099','CC00CC','CC00FF','CC3300','CC3333','CC3366','CC3399',
+        'CC33CC','CC33FF','CC6600','CC6633','CC6666','CC6699','CC66CC','CC66FF',
+        'CC9900','CC9933','CC9966','CC9999','CC99CC','CC99FF','CCCC00','CCCC33',
+        'CCCC66','CCCC99','CCCCCC','CCCCFF','CCFF00','CCFF33','CCFF66','CCFF99',
+        'CCFFCC','CCFFFF','FF0000','FF0033','FF0066','FF0099','FF00CC','FF00FF',
+        'FF3300','FF3333','FF3366','FF3399','FF33CC','FF33FF','FF6600','FF6633',
+        'FF6666','FF6699','FF66CC','FF66FF','FF9900','FF9933','FF9966','FF9999',
+        'FF99CC','FF99FF','FFCC00','FFCC33','FFCC66','FFCC99','FFCCCC','FFCCFF',
+        'FFFF00','FFFF33','FFFF66','FFFF99','FFFFCC','FFFFFF'
     ];
     foreach ($color_values as $color_value) {
         if ($topic_color == $color_value) {
@@ -1854,6 +1813,17 @@ switch ($op) {
         topicsmanager();
         break;
 
+    case 'topics_merge_form':
+        topics_merge_form();
+        break;
+        
+    case 'topics_confirm_merge':
+        topics_confirm_merge();
+        break;
+    case 'topics_merge_ok':
+        topics_merge_ok();
+        break;
+        
     case 'addTopic':
         addTopic();
         break;

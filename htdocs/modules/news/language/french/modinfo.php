@@ -235,6 +235,11 @@ define ('_MI_COUNT_ADMIN_READ_DESC', 'Compte les lectures des adminstrateurs.<br
 define ('_MI_NEWS_CODE_READMORE', 'Code de remplacement pour /Lire la suite/');
 define ('_MI_NEWS_CODE_READMORE_DESC', "Remplace ce code dans le scoop par un lien sur l'article complet");
 
+define ('_MI_NEWS_ALL_AUTHORS', "Tous les auteurs");
+
+
+
+
 /**
  * @translation     Communauté Francophone des Utilisateurs de Xoops
  * @specification   _LANGCODE: fr

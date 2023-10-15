@@ -83,46 +83,56 @@ if (file_exists(XOOPS_ROOT_PATH . '/modules/news/language/' . $xoopsConfig['lang
 }
 $p = array_merge($_GET,$_POST);
 $uid = isset($p['uid']) ? (int)$p['uid'] : 0;
-if (empty($uid)) {
-    redirect_header('index.php', 2, _ERRORS);
-}
+// if (empty($uid)) {
+//     redirect_header('index.php', 2, _ERRORS);
+// }
 
 if (!NewsUtility::getModuleOption('newsbythisauthor')) {
     redirect_header('index.php', 2, _ERRORS);
 }
 
 $story_status = isset($p['story_status']) ? (int)$p['story_status'] : 0;
+$story_order = isset($p['story_order']) ? (int)$p['story_order'] : 0;
+$story_category = isset($p['story_category']) ? (int)$p['story_category'] : 0;
 
-$myts                                    = MyTextSanitizer::getInstance();
-$articles                                = new NewsStory();
+$myts     = MyTextSanitizer::getInstance();
+$articles = new NewsStory();
 $GLOBALS['xoopsOption']['template_main'] = 'news_by_this_author.tpl';
 require_once XOOPS_ROOT_PATH . '/header.php';
 
 $dateformat = NewsUtility::getModuleOption('dateformat');
 $infotips   = NewsUtility::getModuleOption('infotips');
-$thisuser   = new XoopsUser($uid);
 
-switch ($xoopsModuleConfig['displayname']) {
-    case 1: // Username
-        $authname = $thisuser->getVar('uname');
-        break;
-
-    case 2: // Display full name (if it is not empty)
-        if ('' == xoops_trim($thisuser->getVar('name'))) {
+if (empty($uid)) { 
+    $thisuser   = null;
+    $authname = _MI_NEWS_ALL_AUTHORS;
+    $avatar = "avatars/cavt5e25c9b477d25.png";
+ }else{
+    $thisuser   = new XoopsUser($uid);
+    $avatar = $thisuser->getVar('user_avatar');
+    
+    switch ($xoopsModuleConfig['displayname']) {
+        case 1: // Username
             $authname = $thisuser->getVar('uname');
-        } else {
-            $authname = $thisuser->getVar('name');
-        }
-        break;
+            break;
 
-    case 3: // Nothing
-        $authname = '';
-        break;
-}
+        case 2: // Display full name (if it is not empty)
+            if ('' == xoops_trim($thisuser->getVar('name'))) {
+                $authname = $thisuser->getVar('uname');
+            } else {
+                $authname = $thisuser->getVar('name');
+            }
+            break;
+
+        case 3: // Nothing
+            $authname = '';
+            break;
+    }
+ }
 $xoopsTpl->assign('lang_page_title', _MI_NEWSBYTHISAUTHOR . ' - ' . $authname);
 $xoopsTpl->assign('lang_news_by_this_author', _MI_NEWSBYTHISAUTHOR);
 $xoopsTpl->assign('author_id', $uid);
-$xoopsTpl->assign('user_avatarurl', XOOPS_URL . '/uploads/' . $thisuser->getVar('user_avatar'));
+$xoopsTpl->assign('user_avatarurl', XOOPS_URL . '/uploads/' . $avatar);
 $xoopsTpl->assign('author_name', $authname);
 $xoopsTpl->assign('lang_date', _MD_NEWS_DATE);
 $xoopsTpl->assign('lang_hits', _MD_NEWS_VIEWS2);
@@ -136,28 +146,58 @@ $oldtopictitle = '';
 $oldtopiccolor = '';
 $articlelist   = [];
 $articlestpl   = [];
-$articlelist   = $articles->getAllPublishedByAuthor($uid, $xoopsModuleConfig['restrictindex'], false,$story_status);
+
+//$story_order fait double emploi dans l'appel de cette fonction avec triertableauHtml mais je laisse quand même
+$articlelist   = $articles->getAllPublishedByAuthor($uid, $xoopsModuleConfig['restrictindex'], false, $story_order, $story_status, $story_category);
 $articlescount = count($articlelist);
 $xoopsTpl->assign('articles_count', $articlescount);
 $count_articles = $count_reads = 0;
 
 
-
+$styleSelect = "style='width:100%;display:inline;'";
+$onChange = "onChange='document.form_story_status.submit()'";
     //JJDai - Ajout des selection sur l'expiration des articles
-    $selStories = new XoopsFormSelect(_AM_NEWS_STORIES, 'story_status', $story_status);   //      storyStatus
+    $selStories = new XoopsFormSelect(_MD_NEWS_STORIES, 'story_status', $story_status);   //      storyStatus
     $selStories->addOption(NEWS_STORY_STATUS_ACTIFS, _MD_NEWS_ACTIFS);
     $selStories->addOption(NEWS_STORY_STATUS_PERMANENT, _MD_NEWS_PERMANENT);
     $selStories->addOption(NEWS_STORY_STATUS_NON_EXPIRED, _MD_NEWS_NON_EXPIRED);
     $selStories->addOption(NEWS_STORY_STATUS_EXPIRED, _MD_NEWS_EXPIRED);
     $selStories->addOption(NEWS_STORY_STATUS_ALL, _MD_NEWS_ALL);
 
-    $event="onChange='document.form_story_status.submit()'";
-    $selStories->setExtra($event);
-    $selStories->setExtra("style='width:40%;display:inline;'");
+    $selStories->setExtra($onChange);
+    $selStories->setExtra($styleSelect);
     $xoopsTpl->assign('selStories', $selStories->render());
-    $xoopsTpl->assign('uid', $uid);
     //-------------------------------
+    //JJDai - Ajout du choix de tri
+    $selOrder = new XoopsFormSelect(_MD_NEWS_ORDER_BY, 'story_order', $story_order);   //      storyStatus
+    $selOrder->addOption(NEWS_STORY_ORDER_BY_TITLE_ASC , _MD_NEWS_ORDER_BY_TITLE_ASC);
+    $selOrder->addOption(NEWS_STORY_ORDER_BY_TITLE_DESC , _MD_NEWS_ORDER_BY_TITLE_DESC);
+    $selOrder->addOption(NEWS_STORY_ORDER_BY_DATE_ASC , _MD_NEWS_ORDER_BY_DATE_ASC);
+    $selOrder->addOption(NEWS_STORY_ORDER_BY_DATE_DESC , _MD_NEWS_ORDER_BY_DATE_DESC);
+    $selOrder->addOption(NEWS_STORY_ORDER_BY_NB_VIEWS_ASC , _MD_NEWS_ORDER_BY_NB_VIEWS_ASC);
+    $selOrder->addOption(NEWS_STORY_ORDER_BY_NB_VIEWS_DESC , _MD_NEWS_ORDER_BY_NB_VIEWS_DESC);
 
+    $selOrder->setExtra($onChange);
+    $selOrder->setExtra($styleSelect);
+    $xoopsTpl->assign('selOrder', $selOrder->render());
+    //-------------------------------
+    //JJDai - Ajout du choix de la categorie
+    //$catList = NewsUtility::getTopicsItems('news_view', "topic_pid,topic_title");
+    $xt         = new NewsTopic();
+    $catList =  $xt->getAllTopics(true, 'news_view', true);
+        
+    $selCategory = new XoopsFormSelect(_MD_NEWS_CATEGORYS, 'story_category', $story_category);   //      storyStatus
+    $selCategory->addOption(0, _MD_NEWS_CATEGORYS_ALL);
+    $selCategory->addOptionArray($catList);                                        
+ 
+    $selCategory->setExtra($onChange);
+    $selCategory->setExtra($styleSelect);
+    $xoopsTpl->assign('selCategory', $selCategory->render());
+    //-------------------------------
+    $xoopsTpl->assign('uid', $uid);
+    $xoopsTpl->assign('colOrder', $story_order);
+    
+//echo "<hr><pre>" . print_r($articlelist, true) . "</pre><hr>";    
 if ($articlescount > 0) {
     foreach ($articlelist as $article) {
         if ($oldtopic != $article['topicid']) {
@@ -194,6 +234,7 @@ if ($articlescount > 0) {
             'hits'         => $article['counter'],
             'created'      => formatTimestamp($article['created'], $dateformat),
             'article_link' => sprintf("<a href='%s'%s>%s</a>", XOOPS_URL . '/modules/news/article.php?storyid=' . $article['storyid'], $htmltitle, $article['title']),
+            'timestamp'    => $article['published'],
             'published'    => formatTimestamp($article['published'], $dateformat),
             'rating'       => $article['rating']
         ];

@@ -258,12 +258,12 @@ class NewsUtility extends XoopsObject
      * @param $dirname
      * @return array
      */
-    public function getTopicsItems($permtype, $dirname)
+    public static function getTopicsItems($permtype, $columns = null, $dirname='news')
     {
-      $topicIds = $this->getMyItemIds($permtype, $dirname);
-
+      $topicIds = self::getMyItemIds($permtype, $dirname);
+echo "<hr>cat = <pre>" . print_r($topicIds,true) . "</pre><hr>";
       $criteria = new \CriteriaCompo();
-      $criteria->setSort('topic,weight,topic_title');
+      $criteria->setSort('topic,weight, topic_title');
       $criteria->setOrder('ASC');
       $criteria->add(new \Criteria('topic_id', '(' . implode(',', $topicIds) . ')', 'IN'));
 
@@ -274,8 +274,9 @@ global $xoopsDB;
       //$topics=xoops_getHandler('NewsTopic');
       //$helper::getInstance()->getHandler('MyXoopsTopic');
       //$topicHandler = \XoopsModules\News\Helper::getInstance()->getHandler('MyXoopsTopic');
-      $topics = $topicHandler->getAllTopics($criteria);
-
+      $topics = $topicHandler->getAllTopics($criteria, $columns);
+echo "<hr>catList = <pre>" . print_r($topics,true) . "</pre><hr>";
+exit;
       return $topics;
 
     }
@@ -289,7 +290,7 @@ global $xoopsDB;
     public function getTopicMenu($permtype, $dirname)
     {
 
-      $rst = $this->getTopicsItems($permtype, $dirname);
+      $rst = $this->getTopicsItems($permtype, null, $dirname);
       $mytree = new \XoopsModules\News\Tree($rst, 'topic_id', 'topic_pid');
       $prefix = '<img src="'.XOOPS_URL.'/modules/'.$dirname.'/assets/images/deco/arrow.gif">';
       $topicsMenu = $mytree->makeArrayTree("topic_title", $prefix);

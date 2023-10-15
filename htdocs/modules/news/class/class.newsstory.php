@@ -390,7 +390,7 @@ class NewsStory extends MyXoopsStory
      * @param int     $expired - 0=non,1=oui,2=all
      * @return array
      */
-    public function getAllPublishedByAuthor($uid, $checkRight = false, $asobject = true, $story_status = 0)
+    public function getAllPublishedByAuthor($uid, $checkRight = false, $asobject = true, $orderby = 0, $story_status = 0,$story_category=0)
     {
         $db        = XoopsDatabaseFactory::getDatabaseConnection();
         $myts      = MyTextSanitizer::getInstance();
@@ -437,7 +437,7 @@ class NewsStory extends MyXoopsStory
                     . " AND (expired = 0 OR expired > {$time})";
                 break;
         }
-
+        if ($story_category>0) $sql .= " AND {$tblstory}.topicid = {$story_category}";
 
 //           $sql .= ' WHERE ('
 //                  . $tblstory
@@ -451,7 +451,8 @@ class NewsStory extends MyXoopsStory
 //echo "<hr>{$sql}<hr>";
 
 
-        $sql .= ' AND uid=' . (int)$uid;
+        if ($uid) $sql .= ' AND uid=' . (int)$uid;
+        
         if ($checkRight) {
             $topics = NewsUtility::getMyItemIds('news_view');
             $topics = implode(',', $topics);
@@ -460,7 +461,32 @@ class NewsStory extends MyXoopsStory
             }
         }
         //--------------------------------------
-        $sql    .= ' ORDER BY ' . $tbltopics . '.topic_title ASC, ' . $tblstory . '.published DESC';
+        
+        switch ($orderby){   
+        case NEWS_STORY_ORDER_BY_DATE_ASC: 
+                $sqlOrder = "{$tblstory}.published ASC, {$tblstory}.title ASC"; 
+                break;
+        case NEWS_STORY_ORDER_BY_DATE_DESC: 
+                $sqlOrder = "{$tblstory}.published DESC, {$tblstory}.title ASC"; 
+                break;
+        case NEWS_STORY_ORDER_BY_NB_VIEWS_ASC: 
+                $sqlOrder = "{$tblstory}.counter ASC, {$tblstory}.published DESC" ; 
+                break;
+        case NEWS_STORY_ORDER_BY_NB_VIEWS_DESC:  
+                $sqlOrder = "{$tblstory}.counter DESC, {$tblstory}.published DESC" ; 
+                break;
+        case NEWS_STORY_ORDER_BY_TITLE_DESC:  
+                $sqlOrder = "{$tblstory}.title DESC, {$tblstory}.published DESC" ; 
+                break;
+        case NEWS_STORY_ORDER_BY_TITLE_ASC:  
+        default: 
+                $sqlOrder = "{$tblstory}.title ASC, {$tblstory}.published DESC" ; 
+                break;
+        }
+        $sql .= " ORDER BY {$tbltopics}.topic_title ASC, {$sqlOrder}";
+       // echo "<hr>sqlOrder = : {$orderby} - {$sqlOrder}<hr>";
+       // echo "<hr>sql = :<br>{$sql}<hr>";
+        
         $result = $db->query($sql);
         while ($myrow = $db->fetchArray($result)) {
             if ($asobject) {

@@ -33,6 +33,19 @@ tr.separation{
     border: 0px solid red;
     /*  background-color: #888888;  */
 }
+.selTitle{  
+    text-align:right;
+    padding: 0px 12px 0px 12px;  
+    border: 0px solid red;
+    width:30%;
+}
+
+.selSelect{
+    text-align:left;
+    padding: 0px 12px 0px 12px;  
+    border: 0px solid red;
+    width:70%;
+}
 
 </style>
 
@@ -42,11 +55,46 @@ tr.separation{
     <h2 style="display: inline;"><{$lang_news_by_this_author}> <{$author_name_with_link}></h2>
     <br><br>
 *}>
-    <table width='100%' id="this-author-title" >
+            <br><form id='form_story_status'  name='form_story_status' method='post' action='newsbythisauthor.php?uid=<{$uid}>'>
+            
+    <table width='100%' id="this-author-title" name="this-author-title" >
         <tr>
             <td class="this-author-title"><img src='<{$user_avatarurl}>' border='0' alt=''></td>
             <td class="this-author-title"><h2><{$lang_news_by_this_author}> <{$author_name_with_link}></h2>
-            <br><form id='form_story_status'  name='form_story_status' method='post' action='newsbythisauthor.php?uid=<{$uid}>'><{$smarty.const._MD_NEWS_ARTICLES}> : <{$selStories}></form>
+            <table class="this-author-title item-round-all">
+                <tr>
+                    <td class="selTitle">
+                        <{$smarty.const._MD_NEWS_ARTICLES}> :
+                    </td>
+                    <td class="selSelect">
+                        <{$selStories}>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="selTitle">
+                        <{$smarty.const._MD_NEWS_ORDER_BY}> :
+                        
+                    </td>
+                    <td class="selSelect">
+                        <{$selOrder}>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="selTitle">
+                        <{$smarty.const._MD_NEWS_CATEGORYS}> : 
+                        
+                    </td>
+                    <td class="selSelect">
+                        <{$selCategory}>  
+                    </td>
+                </tr>
+            </table>
+            <{* 
+                <{$smarty.const._MD_NEWS_ARTICLES}> : <{$selStories}><br>
+                <{$smarty.const._MD_NEWS_ORDER_BY}> : <{$selOrder}><br>
+                <{$smarty.const._MD_NEWS_CATEGORYS}> : <{$selCategory}>
+            *}> 
+            </form>
            </td>
         </tr>
     </table>
@@ -79,7 +127,7 @@ tr.separation{
             <{* -------------- liste des articles -------------------------*}>
             <{foreach item=article from=$topic.news}>
                 <tr class="<{$topic.topic_color_set}>-item-body">
-                    <td><{$article.published}></td>
+                    <td style='text-align:center;'><span style='display: none;'><{$article.timestamp}></span><{$article.published}></td>
                     <td><{$article.article_link}></td>
                     <td align='right'><{$article.hits}></td>
                     <{if $news_rating}>
@@ -100,7 +148,7 @@ tr.separation{
         </table>
 <script>
 tth_set_value('last_asc', true);
-tth_trierTableau('news-<{$topic.topic_id}>', 2);  
+tth_trierTableau('news-<{$topic.topic_id}>', <{$colOrder}>);  
 </script>
 
                 <br>

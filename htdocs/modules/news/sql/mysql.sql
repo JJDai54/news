@@ -4,6 +4,7 @@
 
 CREATE TABLE news_stories (
   storyid      INT(8) UNSIGNED      NOT NULL AUTO_INCREMENT,
+  topicid      SMALLINT(4) UNSIGNED NOT NULL DEFAULT '1',
   uid          INT(5) UNSIGNED      NOT NULL DEFAULT '0',
   title        VARCHAR(255)         NOT NULL DEFAULT '',
   created      INT(10) UNSIGNED     NOT NULL DEFAULT '0',
@@ -17,7 +18,6 @@ CREATE TABLE news_stories (
   keywords     VARCHAR(255)         NOT NULL,
   description  VARCHAR(255)         NOT NULL,
   counter      INT(8) UNSIGNED      NOT NULL DEFAULT '0',
-  topicid      SMALLINT(4) UNSIGNED NOT NULL DEFAULT '1',
   ihome        TINYINT(1)           NOT NULL DEFAULT '0',
   notifypub    TINYINT(1)           NOT NULL DEFAULT '0',
   story_type   VARCHAR(5)           NOT NULL DEFAULT '',

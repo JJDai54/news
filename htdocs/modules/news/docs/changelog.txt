@@ -1,5 +1,22 @@
+<h5>1.86 Beta 1  2023/10/15      (JJDai - jjdelalandre@orange.fr)</h5>
+- Ajout des filtre de sélection et de tri dans l'annuaire des auteurs
 
-ALTER TABLE `x251_news_topics` CHANGE `topic_color` `topic_color` VARCHAR(12) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '000000';
+<h5>1.84 Beta 1  2022/03/16      (JJDai - jjdelalandre@orange.fr)</h5>
+- Ajout de l'expression "lire la suite" en fin de scoop en tapant "+++"
+- Ajout du framework "trierTableauHtml" pour trier directement les tableaux en cliquant sur les titres de colonnes
+
+<h5>1.82 Beta 1  2021/05/22      (JJDai - jjdelalandre@orange.fr)</h5>
+- Ajout de l'annuaire des auteurs
+- Ajout de la liste des articles par auteurs, catégories et status
+- Ajout du framework "highslide" pour faire un oom sur l'image du scoop
+
+
+<h5>1.80 Beta 1  2020/01/25      (JJDai - jjdelalandre@orange.fr)</h5>
+- reprise du module
+- Divers correction et mise à jour pour les nouvelles version de PHP et MySql
+- Ajout du champ  "topic_color_set"
+- Ajout du framework JJD pour coloriser les articles par catégories
+- Bandeau des catégories par couleur
 
 <h5>1.72 Beta 2        (NOT RELEASED)</h5>
 <hr>

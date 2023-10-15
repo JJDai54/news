@@ -20,10 +20,12 @@ use Xmf\Module\Helper as xHelper;
 //$newsHelper = Xmf\Module\Helper::getHelper('news');
 
 //$newsHelper = xHelper::getHelper("news");
-if(!isset($newsHelper)){
+if(isset($newsHelper)){
+    define ("NEWS_SHOW_TPL_NAME", $newsHelper->getConfig('displayTemplateName') );
+}else{
     $newsHelper = Xmf\Module\Helper::getHelper('news');
+    define ("NEWS_SHOW_TPL_NAME", 0);
 }
-define ("NEWS_SHOW_TPL_NAME", $newsHelper->getConfig('displayTemplateName') );
 
 define ("NEWS_DIRNAME", 'news');
 define ("NEWS_URL", XOOPS_URL . '/modules/' . NEWS_DIRNAME);
@@ -34,12 +36,20 @@ define ("NEWS_DEFAULT", 'default');
 define ("NEWS_COLORSET_AUTHOR", 'purple2');
 
 
-//JJDai - Ajout des selection sur l'expiration des articles
+//JJDai - Ajout des selections sur l'expiration des articles
 define ("NEWS_STORY_STATUS_ACTIFS", 0);
 define ("NEWS_STORY_STATUS_PERMANENT", 1);
 define ("NEWS_STORY_STATUS_NON_EXPIRED", 2);
 define ("NEWS_STORY_STATUS_EXPIRED", 3);
 define ("NEWS_STORY_STATUS_ALL", 4);
+
+//JJDai - Ajout dede l'ordre de tri pour l'annuaire des auteurs
+define ("NEWS_STORY_ORDER_BY_TITLE_ASC", 2);
+define ("NEWS_STORY_ORDER_BY_TITLE_DESC", -2);
+define ("NEWS_STORY_ORDER_BY_DATE_ASC", 1);
+define ("NEWS_STORY_ORDER_BY_DATE_DESC", -1);
+define ("NEWS_STORY_ORDER_BY_NB_VIEWS_ASC", 3);
+define ("NEWS_STORY_ORDER_BY_NB_VIEWS_DESC", -3);
 
 define ("NEWS_NB_LAST_CAR_TO_READ", 50);
 

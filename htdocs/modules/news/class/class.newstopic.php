@@ -119,7 +119,7 @@ class NewsTopic extends MyXoopsTopic
         $none = 0,
         $sel_name = 'topic_id',
         $onchange = '',
-        $perms
+        $perms =null
     ) {
         $myts      = MyTextSanitizer::getInstance();
         $outbuffer = '';
@@ -240,11 +240,13 @@ class NewsTopic extends MyXoopsTopic
      *
      * @return array
      */
-    public function getAllTopics($checkRight = true, $permission = 'news_view')
+    public function getAllTopics($checkRight = true, $permission = 'news_view', $listForSelect = false)
     {
+    global $xoopsDB;
+    
         $topics_arr = [];
-        $db         = XoopsDatabaseFactory::getDatabaseConnection();
-        $table      = $db->prefix('news_topics');
+        //$db         = XoopsDatabaseFactory::getDatabaseConnection();
+        $table      = $xoopsDB->prefix('news_topics');
         $sql        = 'SELECT * FROM ' . $table;
         if ($checkRight) {
             $topics = NewsUtility::getMyItemIds($permission);
@@ -255,12 +257,16 @@ class NewsTopic extends MyXoopsTopic
             $sql    .= ' WHERE topic_id IN (' . $topics . ')';
         }
         $sql    .= ' ORDER BY topic_weight,topic_title';
-        $result = $db->query($sql);
-        while ($array = $db->fetchArray($result)) {
-            $topic = new NewsTopic();
-            $topic->makeTopic($array);
-            $topics_arr[$array['topic_id']] = $topic;
-            unset($topic);
+        $result = $xoopsDB->query($sql);
+        while ($array = $xoopsDB->fetchArray($result)) {
+            if($listForSelect){
+              $topics_arr[$array['topic_id']] = $array['topic_title'];
+            }else{
+              $topic = new NewsTopic();
+              $topic->makeTopic($array);
+              $topics_arr[$array['topic_id']] = $topic;
+              unset($topic);
+           }
         }
 //exit ($sql);
         return $topics_arr;

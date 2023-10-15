@@ -135,6 +135,15 @@ define('_MD_NEWS_DELETE', "Supprimer");
 define('_MD_NEWS_EDIT', "Editer");
 define('_MD_NEWS_SUBTITLE', "Sous-titre : ");
 define('_MD_NEWS_SELECT_IMAGE_DESC', "Description de l'image sélectionnée : ");
+define('_MD_NEWS_CATEGORYS_ALL', "(*) toutes les catégories");
+
+define ('_MD_NEWS_ORDER_BY', "Ttrié par");
+define ('_MD_NEWS_ORDER_BY_TITLE_ASC', "Titres de alphabètique naturel");
+define ('_MD_NEWS_ORDER_BY_TITLE_DESC', "Titres de alphabètique inverse");
+define ('_MD_NEWS_ORDER_BY_DATE_ASC', "Dates chronologiques");
+define ('_MD_NEWS_ORDER_BY_DATE_DESC', "Dates récentes en premier");
+define ('_MD_NEWS_ORDER_BY_NB_VIEWS_ASC', "les moins Vus en premier");
+define ('_MD_NEWS_ORDER_BY_NB_VIEWS_DESC', "Les plus vus en premier");
 
 /**
  * @translation     Communauté Francophone des Utilisateurs de Xoops
@@ -158,5 +167,7 @@ define("_MD_NEWS_ARTICLES", "Articles");
 define("_MD_NEWS_THE", "le");
 define("_MD_NEWS_AT", "à");
 
+define("_MD_NEWS_CATEGORYS", "Catégories");
+define("_MD_NEWS_STORIES", "Articles");
 
 ?>

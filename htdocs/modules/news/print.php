@@ -85,7 +85,7 @@ function PrintPage()
 {
     global $xoopsConfig, $xoopsModule, $story, $xoops_meta_keywords, $xoops_meta_description;
     $myts     = MyTextSanitizer::getInstance();
-    $datetime = formatTimestamp($story->published(), NewsUtility::getModuleOption('dateformat')); ?>
+    $published_formatted = formatTimestamp($story->published(), NewsUtility::getModuleOption('dateformat')); ?>
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo _LANGCODE; ?>" lang="<?php echo _LANGCODE; ?>">
@@ -263,7 +263,7 @@ function PrintPage()
         <table border="0" width="100%" cellpadding="20" cellspacing="1" bgcolor="#ffffff"><tr><td align="center">
         <img src="' . XOOPS_URL . '/images/logo.png" border="0" alt=""><br><br>
         <h3>' . $story->title() . '</h3>
-        <small><b>' . _MD_NEWS_DATE . '</b>&nbsp;' . $datetime . ' | <b>' . _MD_NEWS_TOPICC . '</b>&nbsp;' . $myts->htmlSpecialChars($story->topic_title()) . '</small><br><br></td></tr>';
+        <small><b>' . _MD_NEWS_DATE . '</b>&nbsp;' . $published_formatted . ' | <b>' . _MD_NEWS_TOPICC . '</b>&nbsp;' . $myts->htmlSpecialChars($story->topic_title()) . '</small><br><br></td></tr>';
     echo '<tr valign="top" style="font:12px;"><td>' . $story->hometext() . '<br>';
     $bodytext = $story->bodytext();
     $bodytext = str_replace('[pagebreak]', '<br style="page-break-after:always;">', $bodytext);

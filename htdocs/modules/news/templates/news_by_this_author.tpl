@@ -127,7 +127,7 @@ tr.separation{
             <{* -------------- liste des articles -------------------------*}>
             <{foreach item=article from=$topic.news}>
                 <tr class="<{$topic.topic_color_set}>-item-body">
-                    <td style='text-align:center;'><span style='display: none;'><{$article.timestamp}></span><{$article.published}></td>
+                    <td style='text-align:center;'><span style='display: none;'><{$article.published}></span><{$article.published_formatted}></td>
                     <td><{$article.article_link}></td>
                     <td align='right'><{$article.hits}></td>
                     <{if $news_rating}>

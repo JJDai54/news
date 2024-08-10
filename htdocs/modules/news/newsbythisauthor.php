@@ -232,10 +232,10 @@ if ($articlescount > 0) {
             'hometext'     => $article['hometext'],
             'title'        => $article['title'],
             'hits'         => $article['counter'],
-            'created'      => formatTimestamp($article['created'], $dateformat),
+            'created_formatted'      => formatTimestamp($article['created'], $dateformat),
             'article_link' => sprintf("<a href='%s'%s>%s</a>", XOOPS_URL . '/modules/news/article.php?storyid=' . $article['storyid'], $htmltitle, $article['title']),
-            'timestamp'    => $article['published'],
-            'published'    => formatTimestamp($article['published'], $dateformat),
+            'published'    => $article['published'],
+            'published_formatted' => formatTimestamp($article['published'], $dateformat),
             'rating'       => $article['rating']
         ];
     }

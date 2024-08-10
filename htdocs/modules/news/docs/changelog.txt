@@ -1,5 +1,6 @@
 <h5>1.86 Beta 1  2023/10/15      (JJDai - jjdelalandre@orange.fr)</h5>
 - Ajout des filtre de sélection et de tri dans l'annuaire des auteurs
+- Ajout du timestamp published masqué dans le template "news_par_author" pou rque le tri sur la colonne soit correct sinon ça tri sur le jour ou le mois selon la langue
 
 <h5>1.84 Beta 1  2022/03/16      (JJDai - jjdelalandre@orange.fr)</h5>
 - Ajout de l'expression "lire la suite" en fin de scoop en tapant "+++"

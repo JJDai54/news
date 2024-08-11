@@ -32,6 +32,7 @@ class MyXoopsTopic
     public $topic_pid;
     public $topic_title;
     public $topic_weight;
+    public $topic_description;
     public $topic_imgurl;
     public $prefix; // only used in topic tree
     public $use_permission = false;

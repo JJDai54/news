@@ -217,7 +217,7 @@ if ('' !== xoops_trim($bodytext)) {
         $bodytext                = str_replace('[summary]', $auto_summary, $bodytext);
         $articletext[$storypage] = str_replace('[summary]', $auto_summary, $articletext[$storypage]);
         $story['text']           = str_replace('[summary]', $auto_summary, $story['text']);
-    } else {
+    ÿ el ?? 
         $articletext = explode('[pagebreak]', $bodytext);
     }
 
@@ -342,7 +342,8 @@ $sfiles     = new sFiles();
 $filesarr   = $newsfiles = [];
 $filesarr   = $sfiles->getAllbyStory($storyid);
 $filescount = count($filesarr);
-$xoopsTpl->assign('attached_files_count', $filescount);
+$xoopsTpl->assign('attached_files_count', (isset($filescount)?$filescount:0));
+
 if ($filescount > 0) {
     foreach ($filesarr as $onefile) {
         $newsfiles[] = [

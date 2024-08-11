@@ -23,7 +23,7 @@ _news
 			..\..\..\..\..\JJD-Framework\projet\htdocs\Frameworks\JJD-Framework\css\style-item-color-old.css
 			..\..\..\..\..\JJD-Framework\projet\htdocs\Frameworks\JJD-Framework\css\style-item-color.css
 			..\..\..\..\..\JJD-Framework\projet\htdocs\Frameworks\JJD-Framework\css\style-item-design-old.css
-		+admin
+		-admin
 			admin\about.php
 			admin\admin_footer.php
 			admin\admin_header.php
@@ -82,7 +82,7 @@ _news
 				assets\js\config_highslide.js
 				assets\js\index.html
 			assets\index.html
-		+blocks
+		-blocks
 			blocks\index.html
 			blocks\news_archives.php
 			blocks\news_bigstory.php
@@ -125,7 +125,7 @@ _news
 			-modules
 				extra\modules\index.html
 			extra\index.html
-		+include
+		-include
 			-versions
 				include\versions\index.html
 				include\versions\version-01-70.php
@@ -140,7 +140,7 @@ _news
 			include\storyform.inc.php
 			include\storyform.original.php
 			include\update_function.php
-		+language
+		-language
 			+english
 				-help
 					language\english\help\disclaimer.tpl
@@ -250,50 +250,74 @@ _news
 		whoswho.php
 		xoops_version.php
 [Open project files]
-0=sql\mysql.sql
-1=include\storyform.original.php
-2=print.php
-3=templates\news_by_this_author-02.tpl
-4=templates\news_by_this_author.tpl
-5=newsbythisauthor.php
-6=makepdf.php
-7=article.php
-8=archive.php
-9=docs\changelog.txt
-10=C:\Users\jjdel\AppData\Local\Temp\PSPad\Resume\U41810808.txt
+0=templates\news_item.tpl
+1=article.php
+2=templates\news_article.tpl
+3=index.php
+4=templates\news_index.tpl
+5=templates\news_by_topic.tpl
+6=xoops_version.php
+7=topics_directory.php
+8=include\constantes.php
+9=class\class.newsstory.php
+10=class\xoopstopic.php
+11=class\class.newstopic.php
+12=class\tree.php
+13=archive.php
+14=newsbythisauthor.php
+15=class\news_stories.php
+16=docs\changelog.txt
 [Selected Project Files]
 Main=
-Selected=C:\Users\jjdel\AppData\Local\Temp\PSPad\Resume\U41810808.txt
-[sql\mysql.sql]
-TopLine=1
-Caret=12,11
-[include\storyform.original.php]
-TopLine=76
-Caret=63,94
-[print.php]
-TopLine=234
-Caret=71,266
-[templates\news_by_this_author-02.tpl]
-TopLine=56
-Caret=36,73
-[templates\news_by_this_author.tpl]
-TopLine=113
-Caret=138,130
-[newsbythisauthor.php]
-TopLine=219
-Caret=31,235
-[makepdf.php]
-TopLine=49
-Caret=29,66
+Selected=xoops_version.php
+[templates\news_item.tpl]
+TopLine=10
+Caret=37,45
 [article.php]
-TopLine=406
-Caret=33,422
+TopLine=326
+Caret=1,345
+[templates\news_article.tpl]
+TopLine=1
+Caret=48,9
+[index.php]
+TopLine=176
+Caret=59,185
+[templates\news_index.tpl]
+TopLine=11
+Caret=1,32
+[templates\news_by_topic.tpl]
+TopLine=1
+Caret=48,18
+[xoops_version.php]
+TopLine=7
+Caret=43,28
+[topics_directory.php]
+TopLine=21
+Caret=1,1
+[include\constantes.php]
+TopLine=8
+Caret=35,27
+[class\class.newsstory.php]
+TopLine=1022
+Caret=31,1050
+[class\xoopstopic.php]
+TopLine=335
+Caret=30,358
+[class\class.newstopic.php]
+TopLine=144
+Caret=33,115
+[class\tree.php]
+TopLine=202
+Caret=1,217
 [archive.php]
-TopLine=118
-Caret=14,129
+TopLine=6
+Caret=44,25
+[newsbythisauthor.php]
+TopLine=6
+Caret=44,25
+[class\news_stories.php]
+TopLine=55
+Caret=2,45
 [docs\changelog.txt]
 TopLine=1
-Caret=61,3
-[C:\Users\jjdel\AppData\Local\Temp\PSPad\Resume\U41810808.txt]
-TopLine=1
-Caret=36,1
+Caret=28,1

@@ -1052,7 +1052,7 @@ class NewsStory extends MyXoopsStory
         $todate,
         $topicslist = '',
         $usetopicsdef = 0,
-        &$tbltopics,
+        &$tbltopics = null,
         $asobject = true,
         $order = 'published'
     ) {

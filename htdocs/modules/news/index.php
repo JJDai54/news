@@ -167,6 +167,8 @@ if ($showclassic) {
         $xoopsTpl->assign('topic_color', '#' . $xt->topic_color('S'));
         $xoopsTpl->assign('topic_color_set', news_get_color_set($xt->topic_color_set('S')) );
         $topictitle = $xt->topic_title();
+    }else{
+        $xoopsTpl->assign('topic_description', '');
     }
 
     if (1 == $xoopsModuleConfig['displaynav']) {
@@ -180,7 +182,7 @@ if ($showclassic) {
             $topic_select = $topic_tree->makeSelectElement('storytopic', 'topic_title', '--', $xoopsOption['storytopic'], true, 0, '', '');
             $xoopsTpl->assign('topic_select', $topic_select->render());
         } else {
-            $topic_select = $topic_tree->makeSelBox('storytopic', 'topic_title', '-- ', $xoopsOption['storytopic'], true);
+            $topic_select = $topic_tree->makeSelectElement('storytopic', 'topic_title', '-- ', $xoopsOption['storytopic'], true);
             //$topic_select = $topic_tree->makeSelectElement('storytopic', 'topic_title', '-- ', $xoopsOption['storytopic'], true);
             $xoopsTpl->assign('topic_select', $topic_select);
         }
@@ -218,6 +220,9 @@ if ($showclassic) {
             foreach ($sarray as $storyid => $thisstory) {
                 $filescount = array_key_exists($thisstory->storyid(), $filesperstory) ? $filesperstory[$thisstory->storyid()] : 0;
                 $story      = $thisstory->prepare2show($filescount);
+                
+                $xoopsTpl->assign('attached_files_count', (isset($filescount)?$filescount:0));
+                
                 // The line below can be used to display a Permanent Link image
                 // $story['title'] .= "&nbsp;&nbsp;<a href='".XOOPS_URL."/modules/news/article.php?storyid=".$sarray[$i]->storyid()."'><img src='".XOOPS_URL."/modules/news/assets/images/x.gif' alt='Permanent Link'></a>";
                 $story['news_title']  = addCrLf($story['title']);
@@ -338,7 +343,7 @@ $xoopsTpl->assign('topics_color_set', news_get_topics_color_set($xt));
     }
 //echo "===> topics_color_set : <pre>" .  print_r($topics_color_set, true) . "</pre><hr>";
 $xoopsTpl->assign('topics_color_set', $topics_color_set);
-
+$xoopsTpl->assign('attached_files_count', (isset($filescount)?$filescount:0));
 
     krsort($smarty_topics);
     $columns = [];
@@ -383,6 +388,8 @@ $moduleInfo    = $moduleHandler->get($GLOBALS['xoopsModule']->getVar('mid'));
 if ($xoopsModuleConfig['topicsrss'] && $xoopsOption['storytopic']) {
     $link = sprintf("<a href='%s' title='%s'><img src='%s' border='0' alt='%s'></a>", XOOPS_URL . '/modules/news/backendt.php?topicid=' . $xoopsOption['storytopic'], _MD_NEWS_RSSFEED, \Xmf\Module\Admin::iconUrl('', 16) . '/rss.gif', _MD_NEWS_RSSFEED);
     $xoopsTpl->assign('topic_rssfeed_link', $link);
+}else{
+    $xoopsTpl->assign('topic_rssfeed_link', '');
 }
 
 /**

@@ -22,7 +22,7 @@
         <br>(<span class="item-stats"><{$story.hits}> <{$lang_reads}></span>)
 
         <br><{$story.news_by_the_same_author_link}>  <{* <{$news_by_the_same_author_link}> Lien sur les autres articles du même auteur *}>
-        <!--<span class="itemTopic"><{$lang_topic}> <{$story.topic_title}></span>-->
+
     </div>
 <{if $class_item_article == 1}>
     <div class="item-body-scoop <{$story.topic_color_set}>-item-body-scoop">
@@ -42,7 +42,7 @@
         <div class="item-text <{$story.topic_color_set}>-item-text"><{$story.text}></div>
         <div class="clear"></div>
 </div>
-    <{if $attached_files_count>0}>
+    <{if $attached_files_count > 0}>
         <div class="item-info <{$story.topic_color_set}>-item-legend"><img src="<{$pathIcon16}>/attach.png" title="<{$smarty.const._MD_NEWS_ATTACHEDLIB}>"> <b><{$lang_attached_files}></b>
             <{foreach item=onefile from=$attached_files}>
                 <br><a href='<{$onefile.visitlink}>' target='_blank'><{$onefile.file_realname}></a>
@@ -59,6 +59,6 @@
                rel="nofollow"><{$lang_ratethisnews}></a>
             - <{/if}>
         <{if $story.morelink <>""}><span class="itemPermaLink"><{$story.morelink}></span><{/if}>
-        <br><span class="itemPermaLink"><{$news_by_the_same_author_link}></span>
+        <br><span class="itemPermaLink"><{$story.news_by_the_same_author_link}></span>
     </div>
 

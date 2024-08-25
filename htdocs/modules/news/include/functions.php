@@ -915,9 +915,9 @@ global $helper, $xoopsModuleCongig;
 
     //if ($helper->getConfig('css_folder') =="" ){
     //if ($xoopsModuleCongig['css_folder'] =="" ){
-    if ($helper->getConfig('css_folder') =="" ){
+    if ($helper->getConfig('css_folder') == "" ){
           //$dir = "browse.php?" . news_get_css_path();
-          $dir = "Frameworks/JJD-Framework/css";
+          $dir = "Frameworks/janus/css";
           
     }else{
       $dir = news_get_css_path();

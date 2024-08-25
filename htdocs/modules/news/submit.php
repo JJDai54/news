@@ -322,7 +322,7 @@ switch ($op) {
         }
 
 // ***************** verif JJDai ****************************************
-// include_once(XOOPS_ROOT_PATH . '/Frameworks/JJD/include/WhatDoYouWantToDo.php');
+// include_once(XOOPS_ROOT_PATH . '/Frameworks/janus/include/WhatDoYouWantToDo.php');
 // sanityse_whatDoYouWantToDoA($_POST,
 //                            $nomTable = 'story',
 //                            $nomChamp = array('hometext','bodytext'),

@@ -833,7 +833,7 @@ $modversion['config'][] = ['name' => 'css_folder',
                     'description' => '_MI_NEWS_CSS_FOLDER_DESC',
                        'formtype' => 'textbox',
                       'valuetype' => 'text',
-                        'default' => ''];
+                        'default' => 'Frameworks/janus/css'];
 
 
 $modversion['config'][] = ['name' => 'color_set',

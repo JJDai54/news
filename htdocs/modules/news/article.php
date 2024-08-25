@@ -217,7 +217,6 @@ if ('' !== xoops_trim($bodytext)) {
         $bodytext                = str_replace('[summary]', $auto_summary, $bodytext);
         $articletext[$storypage] = str_replace('[summary]', $auto_summary, $articletext[$storypage]);
         $story['text']           = str_replace('[summary]', $auto_summary, $story['text']);
-    ÿ el ?? 
         $articletext = explode('[pagebreak]', $bodytext);
     }
 

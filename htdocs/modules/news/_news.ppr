@@ -250,18 +250,27 @@ _news
 		whoswho.php
 		xoops_version.php
 [Open project files]
-0=include\functions.php
-1=xoops_version.php
-2=header.php
-3=submit.php
+0=admin\menu.php
+1=include\functions.php
+2=xoops_version.php
+3=header.php
+4=submit.php
+5=admin\index.php
+6=J:\Xoops\modules-Xoops\modules originaux\news\news-master\admin\index.php
+7=sql\mysql.sql
+8=admin\clone.php
+9=admin\admin_header.php
 [Selected Project Files]
 Main=
-Selected=xoops_version.php
+Selected=admin\admin_header.php
+[admin\menu.php]
+TopLine=56
+Caret=22,90
 [include\functions.php]
 TopLine=901
 Caret=35,920
 [xoops_version.php]
-TopLine=817
+TopLine=796
 Caret=55,836
 [header.php]
 TopLine=1
@@ -269,3 +278,18 @@ Caret=3,24
 [submit.php]
 TopLine=306
 Caret=53,325
+[admin\index.php]
+TopLine=11
+Caret=1,1
+[J:\Xoops\modules-Xoops\modules originaux\news\news-master\admin\index.php]
+TopLine=712
+Caret=1,714
+[sql\mysql.sql]
+TopLine=44
+Caret=7,70
+[admin\clone.php]
+TopLine=19
+Caret=23,52
+[admin\admin_header.php]
+TopLine=7
+Caret=12,40

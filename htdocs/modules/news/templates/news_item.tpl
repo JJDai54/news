@@ -42,9 +42,23 @@
         <div class="item-text <{$story.topic_color_set}>-item-text"><{$story.text}></div>
         <div class="clear"></div>
 </div>
-    <{if $attached_files_count > 0}>
+
+    <{* <{if $attached_files_count > 0}> *}>
+    <{if $story.files_attached}>
         <div class="item-info <{$story.topic_color_set}>-item-legend"><img src="<{$pathIcon16}>/attach.png" title="<{$smarty.const._MD_NEWS_ATTACHEDLIB}>"> <b><{$lang_attached_files}></b>
-            <{foreach item=onefile from=$attached_files}>
+             <a href='<{$story.url_to_story}>' title=''>
+             <{$attached_files_count}> <{$smarty.const._MD_NEWS_ATTACHEDFILES}>
+             </a> 
+        </div>
+    <{/if}>
+
+
+    <{* <{if $attached_files_count > 0}> *}>
+    <{* <{if $story.files_attached}> *}>
+    <{if $attached_files|count > 0}>
+        <div class="item-info <{$story.topic_color_set}>-item-legend"><img src="<{$pathIcon16}>/attach.png" title="<{$smarty.const._MD_NEWS_ATTACHEDLIB}>"> <b><{$lang_attached_files}></b>
+             <{$attached_files_count}> <{$smarty.const._MD_NEWS_ATTACHEDFILES}> 
+             <{foreach item=onefile from=$attached_files}>
                 <br><a href='<{$onefile.visitlink}>' target='_blank'><{$onefile.file_realname}></a>
                 &nbsp;
             <{/foreach}>

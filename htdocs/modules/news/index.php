@@ -77,6 +77,7 @@ include_once ('../../mainfile.php');
 //$u=$XOOPS_URL.'/uploads/news_xml.php';
 //  $x = file_get_contents($u);
 
+require_once XOOPS_ROOT_PATH . '/modules/news/header.php';
 require_once XOOPS_ROOT_PATH . '/modules/news/class/class.newsstory.php';
 require_once XOOPS_ROOT_PATH . '/modules/news/class/class.sfiles.php';
 require_once XOOPS_ROOT_PATH . '/modules/news/class/class.newstopic.php';
@@ -286,6 +287,8 @@ if ($showclassic) {
 //echo "===> topics_color_set-v01 : <pre>" .  print_r($topics_color_set, true) . "</pre><hr>";
 //$xoopsTpl->assign('topics_color_set', $topics_color_set);
 $xoopsTpl->assign('topics_color_set', news_get_topics_color_set($xt));
+$xoopsTpl->assign('pathIcon16', $pathIcon16);
+//echo "<hr>pathIcon16 : {$pathIcon16}<hr>";
 //---------------------------------------------------------------------
 
 } else { // Affichage par sujets

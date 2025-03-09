@@ -22,3 +22,10 @@ include_once 'include/constantes.php';
 include_once 'include/functions.php';
 setlocale (LC_TIME, 'fr_FR.utf8','fra');
 //news_load_css();
+
+
+$pathIcon16 = \Xmf\Module\Admin::iconUrl('', 16);
+$pathIcon32 = \Xmf\Module\Admin::iconUrl('', 32);
+
+
+//$xoopsTpl->assign('pathIcon16', $pathIcon16);

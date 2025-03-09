@@ -961,14 +961,15 @@ class NewsStory extends MyXoopsStory
             $story['infotips'] = ' title="' . $this->title() . '"';
         }
         //$story['title'] = $this->title(); //JJDai
-        $story['title'] = "<a href='" . XOOPS_URL . '/modules/news/article.php?storyid=' . $this->storyid() . "'" . $story['infotips'] . '>' . $this->title() . '</a>';
-        $story['title_url'] = "<a href='" . XOOPS_URL . '/modules/news/article.php?storyid=' . $this->storyid() . "'" . $story['infotips'] . '>' . $this->title() . '</a>';
+        $story['url_to_story'] = XOOPS_URL . '/modules/news/article.php?storyid=' . $this->storyid();
+        $story['title'] = "<a href='" . $story['url_to_story'] . "'" . $story['infotips'] . '>' . $this->title() . '</a>';
+        $story['title_url'] = "<a href='" . $story['url_to_story'] . "'" . $story['infotips'] . '>' . $this->title() . '</a>';
         //$story['subtitle'] = $this->subtitle();
 
         $story['hits'] = $this->counter();
         if ($filescount > 0) {
             $story['files_attached'] = true;
-            $story['attached_link']  = "<a href='" . XOOPS_URL . '/modules/news/article.php?storyid=' . $this->storyid() . "' title='" . _MD_NEWS_ATTACHEDLIB . "'><img src=\"" . $pathIcon16 . '/attach.png" title="' . _MD_NEWS_ATTACHEDLIB . '"></a>';
+            $story['attached_link']  = "<a href='" . $story['url_to_story'] . "' title='" . _MD_NEWS_ATTACHEDLIB . "'><img src=\"" . $pathIcon16 . '/attach.png" title="' . _MD_NEWS_ATTACHEDLIB . '"></a>';
         } else {
             $story['files_attached'] = false;
             $story['attached_link']  = '';

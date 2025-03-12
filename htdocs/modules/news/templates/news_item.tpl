@@ -55,7 +55,7 @@
 
     <{* <{if $attached_files_count > 0}> *}>
     <{* <{if $story.files_attached}> *}>
-    <{if $attached_files|count > 0}>
+    <{if $attached_files AND $attached_files|count > 0}>
         <div class="item-info <{$story.topic_color_set}>-item-legend"><img src="<{$pathIcon16}>/attach.png" title="<{$smarty.const._MD_NEWS_ATTACHEDLIB}>"> <b><{$lang_attached_files}></b>
              <{$attached_files_count}> <{$smarty.const._MD_NEWS_ATTACHEDFILES}> 
              <{foreach item=onefile from=$attached_files}>

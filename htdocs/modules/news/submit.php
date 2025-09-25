@@ -137,6 +137,7 @@ switch ($op) {
         }
         echo "<table width='100%' border='0' cellspacing='1' class='outer'><tr><td class=\"odd\">";
         echo '<h4>' . _AM_NEWS_EDITARTICLE . '</h4>';
+        $authors     = $story->authors('Edit');
         $title       = $story->title('Edit');
         $subtitle    = $story->subtitle('Edit');
         //$subtitle    =  $myts->displayTarea($story->subtitle('Edit'), $html, $smiley, 1);
@@ -223,6 +224,7 @@ switch ($op) {
         if (isset($_POST['topicalign'])) {
             $topicalign = $_POST['topicalign'];
         }
+        $story->setAuthors($_POST['authors']);
         $story->setTitle($_POST['title']);
         $story->setSubtitle($_POST['subtitle']);
         $story->setHometext($_POST['hometext']);
@@ -332,6 +334,7 @@ switch ($op) {
 
 
         $story->setUid($uid);
+        $story->setAuthors($_POST['authors']);
         $story->setTitle($_POST['title']);
         $story->setSubtitle($_POST['subtitle']);
         $story->setHometext($_POST['hometext']);

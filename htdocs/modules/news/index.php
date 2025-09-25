@@ -227,6 +227,7 @@ if ($showclassic) {
                 // The line below can be used to display a Permanent Link image
                 // $story['title'] .= "&nbsp;&nbsp;<a href='".XOOPS_URL."/modules/news/article.php?storyid=".$sarray[$i]->storyid()."'><img src='".XOOPS_URL."/modules/news/assets/images/x.gif' alt='Permanent Link'></a>";
                 $story['news_title']  = addCrLf($story['title']);
+                $story['authors']     = $thisstory->authors();
                 $story['title']       = $thisstory->textlink() . '&nbsp;:&nbsp;' . addCrLf($story['title']);
                 $story['subtitle']    = $thisstory->subtitle();
                 $story['topic_title'] = $thisstory->textlink();
@@ -414,6 +415,7 @@ $xoopsTpl->assign('lang_printerpage', _MD_NEWS_PRINTERFRIENDLY);
 $xoopsTpl->assign('lang_sendstory', _MD_NEWS_SENDSTORY);
 $xoopsTpl->assign('lang_postedby', _POSTEDBY);
 $xoopsTpl->assign('lang_reads', _MD_NEWS_VIEWS);
+$xoopsTpl->assign('lang_authors', _MD_NEWS_AUTHORS);
 $xoopsTpl->assign('lang_morereleases', _MD_NEWS_MORERELEASES);
 
 //$highslide = 'highslide'; //4113

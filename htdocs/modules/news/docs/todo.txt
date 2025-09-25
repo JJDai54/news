@@ -1,0 +1,8 @@
+
+ALTER TABLE `x251_news_stories` ADD `authors` VARCHAR(255) NOT NULL AFTER `uid`; 
+
+UPDATE x251_news_stories tn
+INNER JOIN x251_users tu
+ON tn.uid = tu.uid
+ SET authors = tu.name;
+ 

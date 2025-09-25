@@ -6,6 +6,7 @@ CREATE TABLE news_stories (
   storyid      INT(8) UNSIGNED      NOT NULL AUTO_INCREMENT,
   topicid      SMALLINT(4) UNSIGNED NOT NULL DEFAULT '1',
   uid          INT(5) UNSIGNED      NOT NULL DEFAULT '0',
+  authors      VARCHAR(255)         NOT NULL DEFAULT ''
   title        VARCHAR(255)         NOT NULL DEFAULT '',
   created      INT(10) UNSIGNED     NOT NULL DEFAULT '0',
   published    INT(10) UNSIGNED     NOT NULL DEFAULT '0',

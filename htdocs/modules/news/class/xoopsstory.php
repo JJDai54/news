@@ -31,6 +31,7 @@ class MyXoopsStory
     public $storyid;
     public $topicid;
     public $uid;
+    public $authors;
     public $title;
     public $subtitle;
     public $hometext;
@@ -89,6 +90,14 @@ class MyXoopsStory
     public function setUid($value)
     {
         $this->uid = (int)$value;
+    }
+
+    /**
+     * @param $value
+     */
+    public function setAuthors($value)
+    {
+        $this->authors = $value;
     }
 
     /**
@@ -228,6 +237,7 @@ class MyXoopsStory
     {
         //$newpost = 0;
         $myts     = MyTextSanitizer::getInstance();
+        $authors  = $myts->censorString($this->authors);
         $title    = $myts->censorString($this->title);
         $subtitle = $myts->censorString($this->subtitle);
         $hometext = $myts->censorString($this->hometext);
@@ -258,10 +268,11 @@ class MyXoopsStory
             $published  = $this->approved ? $this->published : 0;
 
             $sql = sprintf(
-                "INSERT INTO %s (storyid, uid, title, created, published, expired, hostname, nohtml, nosmiley, hometext, bodytext, counter, topicid, ihome, notifypub, story_type, topicdisplay, topicalign, comments) VALUES (%u, %u, '%s', %u, %u, %u, '%s', %u, %u, '%s', '%s', %u, %u, %u, %u, '%s', %u, '%s', %u)",
+                "INSERT INTO %s (storyid, uid, authors, title, created, published, expired, hostname, nohtml, nosmiley, hometext, bodytext, counter, topicid, ihome, notifypub, story_type, topicdisplay, topicalign, comments) VALUES (%u, %u, '%s', '%s', %u, %u, %u, '%s', %u, %u, '%s', '%s', %u, %u, %u, %u, '%s', %u, '%s', %u)",
                            $this->table,
                 $newstoryid,
                 $this->uid,
+                $authors,
                 $title,
                 $created,
                 $published,
@@ -283,8 +294,9 @@ class MyXoopsStory
         } else {
             if ($this->approved) {
                 $sql = sprintf(
-                    "UPDATE %s SET title = '%s', published = %u, expired = %u, nohtml = %u, nosmiley = %u, hometext = '%s', bodytext = '%s', topicid = %u, ihome = %u, topicdisplay = %u, topicalign = '%s', comments = %u WHERE storyid = %u",
+                    "UPDATE %s SET authors = '%s', title = '%s', published = %u, expired = %u, nohtml = %u, nosmiley = %u, hometext = '%s', bodytext = '%s', topicid = %u, ihome = %u, topicdisplay = %u, topicalign = '%s', comments = %u WHERE storyid = %u",
                     $this->table,
+                    $authors,
                     $title,
                     $this->published,
                     $expired,
@@ -301,8 +313,9 @@ class MyXoopsStory
                 );
             } else {
                 $sql = sprintf(
-                    "UPDATE %s SET title = '%s', expired = %u, nohtml = %u, nosmiley = %u, hometext = '%s', bodytext = '%s', topicid = %u, ihome = %u, topicdisplay = %u, topicalign = '%s', comments = %u WHERE storyid = %u",
+                    "UPDATE %s SET authors = '%s', title = '%s', expired = %u, nohtml = %u, nosmiley = %u, hometext = '%s', bodytext = '%s', topicid = %u, ihome = %u, topicdisplay = %u, topicalign = '%s', comments = %u WHERE storyid = %u",
                     $this->table,
+                    $authors,
                     $title,
                     $expired,
                     $this->nohtml,
@@ -322,6 +335,7 @@ class MyXoopsStory
         if (!$result = $this->db->query($sql)) {
             return false;
         }
+
         if (empty($newstoryid)) {
             $newstoryid    = $this->db->getInsertId();
             $this->storyid = $newstoryid;
@@ -348,6 +362,7 @@ class MyXoopsStory
     {
         foreach ($array as $key => $value) {
             $this->$key = $value;
+//            echo "===> {$key} ===> {$value}<br>";
         }
     }
 
@@ -418,6 +433,28 @@ class MyXoopsStory
         return XoopsUser::getUnameFromId($this->uid);
     }
 
+    /**
+     * @param string $format
+     *
+     * @return mixed
+     */
+    public function authors($format = 'Show')
+    {
+        $myts   = MyTextSanitizer::getInstance();
+        switch ($format) {
+            case 'Show':
+            case 'Edit':
+                $authors = $myts->htmlSpecialChars($this->authors);
+                break;
+            case 'Preview':
+            case 'InForm':
+                $authors = $myts->htmlSpecialChars($myts->stripSlashesGPC($this->authors));
+                break;
+        }
+
+        return $authors;
+    }
+    
     /**
      * @param string $format
      *

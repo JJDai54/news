@@ -23,13 +23,13 @@ include_once XOOPS_ROOT_PATH . '/modules/news/include/functions.php';
 // defined('XOOPS_ROOT_PATH') || exit('Restricted access.');
 $moduleDirName = basename(__DIR__);
 
-$modversion['version']       = 1.82;
+$modversion['version']       = 1.90;
 $modversion['module_status'] = 'Beta 1';
-$modversion['release_date']  = '2024/08/11';
+$modversion['release_date']  = '2025/09/25';
 $modversion['name']          = _MI_NEWS_NAME;
 $modversion['description']   = _MI_NEWS_DESC;
 $modversion['credits']       = 'XOOPS Project, Christian, Pilou, Marco, <br>ALL the members of the Newbb Team, GIJOE, Zoullou, Mithrandir, <br>Setec Astronomy, Marcan, 5vision, Anne, Trabis, dhsoft, Mamba, Mage, Timgno, jjDai';
-$modversion['author']        = 'XOOPS Project Module Dev Team & Hervé Thouzard last update jjDai';
+$modversion['author']        = 'XOOPS Project Module Dev Team & Hervé Thouzard - last update jjDai (jjdelalandre@orange.fr)';
 $modversion['nickname']      = 'hervet - jjDai';
 $modversion['help']          = 'page=help';
 $modversion['license']       = 'GNU General Public License';
@@ -42,14 +42,14 @@ $modversion['dirname']       = $moduleDirName;
 //$modversion['icons32']             = '../../Frameworks/moduleclasses/icons/32';
 $modversion['onInstall']           = 'include/install_function.php';
 $modversion['onUpdate']            = 'include/update_function.php';
-$modversion['module_website_url']  = 'www.xoops.org/';
+$modversion['module_website_url']  = 'https://www.frxoops.org/';
 $modversion['module_website_name'] = 'XOOPS';
-$modversion['author_website_url']  = 'https://xoops.org/';
-$modversion['author_website_name'] = 'XOOPS';
+$modversion['author_website_url']  = 'https://oritheque.fr/';
+$modversion['author_website_name'] = 'Orithèque';
 $modversion['min_php']             = '5.5';
-$modversion['min_xoops']           = '2.5.9';
+$modversion['min_xoops']           = '2.5.11';
 $modversion['min_admin']           = '1.2';
-$modversion['min_db']              = ['mysql' => '5.5'];
+$modversion['min_db']              = ['mysql' => '5.7'];
 
 $modversion['sqlfile']['mysql'] = 'sql/mysql.sql';
 

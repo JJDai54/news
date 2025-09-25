@@ -1,3 +1,8 @@
+<h5>1.90 Beta 1  2025/09/25      (JJDai - jjdelalandre@orange.fr)</h5>
+Ajout du champ "authors varchar 255".
+Permet d'ajouter un ou plusieurs auteurs pas nécessairement enregistré sur le site, mais dont l'article aurait été posté par un membre habilité.
+
+
 <h5>1.88 Beta 1  2024/08/11      (JJDai - jjdelalandre@orange.fr)</h5>
 Divers corrections por migration vers xoops 2.5.12
     - variables absentes dans les template

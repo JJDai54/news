@@ -19,6 +19,7 @@
         <{if $story.files_attached}><{$story.attached_link}>&nbsp;<{/if}>
         <{if $story.poster != ''}><span class="item-poster <{$story.topic_color_set}>-itemPoster"><{$lang_postedby}> <{$story.poster}></span><{/if}>
         <span class="item-post-date"><{$lang_on}> <{$story.posttime}></span>
+        <{$story.authors}><{if $story.authors != ''}><br><span class="item-poster <{$story.topic_color_set}>-itemPoster"><{$lang_authors}> : <{$story.authors}></span><{/if}>
         <br>(<span class="item-stats"><{$story.hits}> <{$lang_reads}></span>)
 
         <br><{$story.news_by_the_same_author_link}>  <{* <{$news_by_the_same_author_link}> Lien sur les autres articles du même auteur *}>

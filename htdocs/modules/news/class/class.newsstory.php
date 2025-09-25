@@ -1098,6 +1098,7 @@ class NewsStory extends MyXoopsStory
     {
         $myts        = MyTextSanitizer::getInstance();
         $counter     = isset($this->counter) ? $this->counter : 0;
+        $authors     = $myts->addSlashes($myts->censorString($this->authors));
         $title       = $myts->addSlashes($myts->censorString($this->title));
         $subtitle    = $myts->addSlashes($myts->censorString($this->subtitle));
         $hostname    = $myts->addSlashes($this->hostname);
@@ -1129,10 +1130,11 @@ class NewsStory extends MyXoopsStory
             $created    = time();
             $published  = $this->approved ? (int)$this->published : 0;
             $sql        = sprintf(
-                "INSERT INTO %s (storyid, uid, title, created, published, expired, hostname, nohtml, nosmiley, hometext, bodytext, counter, topicid, ihome, notifypub, story_type, topicdisplay, topicalign, comments, rating, votes, description, keywords, picture, pictureinfo, subtitle) VALUES (%u, %u, '%s', %u, %u, %u, '%s', %u, %u, '%s', '%s', %u, %u, %u, %u, '%s', %u, '%s', %u, %u, %u, '%s', '%s', '%s', '%s', '%s')",
+                "INSERT INTO %s (storyid, uid, authors,  title, created, published, expired, hostname, nohtml, nosmiley, hometext, bodytext, counter, topicid, ihome, notifypub, story_type, topicdisplay, topicalign, comments, rating, votes, description, keywords, picture, pictureinfo, subtitle) VALUES (%u, %u, '%s', '%s', %u, %u, %u, '%s', %u, %u, '%s', '%s', %u, %u, %u, %u, '%s', %u, '%s', %u, %u, %u, '%s', '%s', '%s', '%s', '%s')",
                                   $this->table,
                 $newstoryid,
                 (int)$this->uid(),
+                $authors,
                 $title,
                 $created,
                 $published,
@@ -1160,8 +1162,9 @@ class NewsStory extends MyXoopsStory
             );
         } else {
             $sql        = sprintf(
-                "UPDATE %s SET title='%s', published=%u, expired=%u, nohtml=%u, nosmiley=%u, hometext='%s', bodytext='%s', topicid=%u, ihome=%u, topicdisplay=%u, topicalign='%s', comments=%u, rating=%u, votes=%u, uid=%u, description='%s', keywords='%s', picture='%s' , pictureinfo='%s' , subtitle='%s' WHERE storyid = %u",
+                "UPDATE %s SET authors='%s', title='%s', published=%u, expired=%u, nohtml=%u, nosmiley=%u, hometext='%s', bodytext='%s', topicid=%u, ihome=%u, topicdisplay=%u, topicalign='%s', comments=%u, rating=%u, votes=%u, uid=%u, description='%s', keywords='%s', picture='%s' , pictureinfo='%s' , subtitle='%s' WHERE storyid = %u",
                                   $this->table,
+                $authors,
                 $title,
                 (int)$this->published(),
                 $expired,

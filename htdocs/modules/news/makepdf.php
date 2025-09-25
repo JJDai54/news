@@ -120,7 +120,7 @@ if ('' !== $pdf_data['subsubtitle']) {
 $pdf->writeHTML($puff, '0.2');
 //$pdf->SetFont(PDF_FONT_NAME_DATA, PDF_FONT_STYLE_DATA, PDF_FONT_SIZE_DATA);
 //$out = NEWS_PDF_AUTHOR . ': ' . $pdf_data['author'] . '<br>';
-$out = _MD_NEWS_AUTHOR . ': ' . $pdf_data['author'] . '<br>';   //JJDai
+$out = _MD_NEWS_POSTED_BY . ': ' . $pdf_data['author'] . '<br>';   //JJDai
 $pdf->writeHTML($out, '0.2');
 //$out = NEWS_PDF_DATE . ': ' . $pdf_data['date'] . '<br>';
 $out = _MD_NEWS_DATE . ': ' . $pdf_data['date'] . '<br>'; //JJDai

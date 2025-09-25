@@ -94,7 +94,7 @@ if ($approveprivilege && is_object($xoopsUser) && $xoopsUser->isAdmin($xoopsModu
     $memberHandler = xoops_getHandler('member');
     $usercount     = $memberHandler->getUserCount();
     if ($usercount < $cfg['config_max_users_list']) {
-        $sform->addElement(new XoopsFormSelectUser(_MD_NEWS_AUTHOR, 'author', true, $newsauthor), false);
+        $sform->addElement(new XoopsFormSelectUser(_MD_NEWS_POSTED_BY, 'author', true, $newsauthor), false);
     } else {
         $sform->addElement(new XoopsFormText(_MD_NEWS_AUTHOR_ID, 'author', 10, 10, $newsauthor), false);
     }

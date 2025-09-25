@@ -35,7 +35,7 @@ _news
 			letter.php
 			admin\menu.php
 			admin\upgrade.php
-		+assets
+		-assets
 			+css
 				assets\css\index.html
 				assets\css\print.css
@@ -94,7 +94,7 @@ _news
 			blocks\news_top.php
 			blocks\news_topics.php
 			blocks\news_topicsnav.php
-		+class
+		-class
 			-plugins
 				class\plugins\index.html
 				class\plugins\plugin.tag.php
@@ -121,16 +121,18 @@ _news
 			docs\lang_diff.txt
 			docs\licence.txt
 			docs\readme.txt
+			docs\todo.txt
 			docs\upgrade.txt
 		-extra
 			-modules
 				extra\modules\index.html
 			extra\index.html
-		-include
-			-versions
+		+include
+			+versions
 				include\versions\index.html
 				include\versions\version-01-70.php
 				include\versions\version-01-80.php
+				include\versions\version-01-90.php
 			include\comment_functions.php
 			include\constantes.php
 			include\functions.php
@@ -186,10 +188,10 @@ _news
 		-seo
 			seo\.htaccess
 			seo\index.html
-		+sql
+		-sql
 			sql\index.html
 			sql\mysql.sql
-		+templates
+		-templates
 			+blocks
 				templates\blocks\index.html
 				templates\blocks\news_block_archives.tpl
@@ -251,38 +253,26 @@ _news
 		whoswho.php
 		xoops_version.php
 [Open project files]
-0=templates\news_item.tpl
-1=article.php
-2=index.php
-3=header.php
-4=admin\admin_header.php
-5=language\french\main.php
-6=class\news_stories.php
-7=class\class.newsstory.php
+0=docs\changelog.txt
+1=xoops_version.php
+2=include\versions\version-01-80.php
+3=include\versions\version-01-90.php
+4=docs\todo.txt
 [Selected Project Files]
 Main=
-Selected=templates\news_item.tpl
-[templates\news_item.tpl]
-TopLine=32
-Caret=1,54
-[article.php]
-TopLine=298
-Caret=20,344
-[index.php]
-TopLine=299
-Caret=65,321
-[header.php]
+Selected=docs\changelog.txt
+[docs\changelog.txt]
 TopLine=1
-Caret=1,29
-[admin\admin_header.php]
-TopLine=16
-Caret=1,63
-[language\french\main.php]
-TopLine=40
-Caret=31,56
-[class\news_stories.php]
-TopLine=48
+Caret=1,4
+[xoops_version.php]
+TopLine=7
+Caret=54,52
+[include\versions\version-01-80.php]
+TopLine=1
 Caret=1,1
-[class\class.newsstory.php]
-TopLine=955
-Caret=76,972
+[include\versions\version-01-90.php]
+TopLine=1
+Caret=38,23
+[docs\todo.txt]
+TopLine=1
+Caret=1,2

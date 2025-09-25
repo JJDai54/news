@@ -1015,7 +1015,7 @@ exit;
 /**
 *
 **/
-function news_getAroundTime($ts = null){
+    public static function  news_getAroundTime($ts = null){
     if (is_null($ts) || $ts==0) $ts = time();
     $minutes = date("i", $ts);
     $heures = date("H", $ts);

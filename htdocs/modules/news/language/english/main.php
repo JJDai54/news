@@ -69,7 +69,7 @@ define('_MD_NEWS_VOTEONCE', 'Please do not vote for the same resource more than 
 define('_MD_NEWS_VOTEAPPRE', 'Your vote is appreciated.');
 define('_MD_NEWS_THANKYOU', 'Thank you for taking the time to vote here at %s'); // %s is your site name
 define('_MD_NEWS_RSSFEED', 'RSS feed');    // Warning, this text is included insided an Alt attribut (for a picture), so take care to the quotes
-define('_MD_NEWS_AUTHOR', 'Author');
+define('_MD_NEWS_POSTED_BY', 'Posted by');
 define('_MD_NEWS_META_DESCRIPTION', 'Meta description');
 define('_MD_NEWS_META_KEYWORDS', 'Meta keywords');
 define('_MD_NEWS_MAKEPDF', 'Create a PDF from the article');
@@ -119,3 +119,5 @@ define('_MD_NEWS_SUBTITLE', 'Subtitle: ');
 define('_MD_NEWS_SELECT_IMAGE_DESC', 'Description of selected image: ');
 
 define('_MD_NEWS_NOSUBJECT', '(No Subject)');
+define("_MD_NEWS_AUTHORS", "Auteurs");
+

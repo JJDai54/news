@@ -84,7 +84,7 @@ define('_MD_NEWS_VOTEONCE',"Merci de ne pas  voter pour une même ressource plus
 define('_MD_NEWS_VOTEAPPRE',"Merci pour votre vote.");
 define('_MD_NEWS_THANKYOU',"Merci d'avoir pris le temps de voter ici sur %s"); // %s is your site name
 define('_MD_NEWS_RSSFEED',"Flux RSS");	// Warning, this text is included insided an Alt attribut (for a picture), so take care to the quotes
-define('_MD_NEWS_AUTHOR',"Auteur");
+define('_MD_NEWS_POSTED_BY',"Proposé par");
 define('_MD_NEWS_META_DESCRIPTION',"Description Meta");
 define('_MD_NEWS_META_KEYWORDS',"Meta mots clés");
 define('_MD_NEWS_MAKEPDF',"Créer un fichier PDF à partir de cet article");
@@ -169,5 +169,8 @@ define("_MD_NEWS_AT", "à");
 
 define("_MD_NEWS_CATEGORYS", "Catégories");
 define("_MD_NEWS_STORIES", "Articles");
+define("_MD_NEWS_AUTHORS", "Auteurs");
+define("_MD_NEWS_POSTED_BY", "Proposé par");
+
 
 ?>

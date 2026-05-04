@@ -55,7 +55,7 @@ class news_topics extends XoopsObject
         $this->initVar('topic_title', XOBJ_DTYPE_TXTBOX, null, false);
         $this->initVar('topic_weight', XOBJ_DTYPE_INT, null, false);
         $this->initVar('topic_imgurl', XOBJ_DTYPE_TXTBOX, null, false);
-        $this->initVar('menu', XOBJ_DTYPE_INT, null, false, 1);
+        $this->initVar('topic_menu', XOBJ_DTYPE_INT, null, false, 1);
         $this->initVar('topic_frontpage', XOBJ_DTYPE_INT, null, false, 1);
         $this->initVar('topic_rssurl', XOBJ_DTYPE_TXTBOX, null, false);
         $this->initVar('topic_description', XOBJ_DTYPE_TXTAREA, null, false);

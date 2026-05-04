@@ -117,6 +117,7 @@ define('_MD_NEWS_BOOKMARK_TO_YAHOO',"Mettre en favoris dans Yahoo");
 define('_MD_NEWS_NOTYETSTORY',"Désolé, l'artcile sélectionné n'a pas encore été publié. Veuillez revenir plus tard.");
 define('_MD_NEWS_SELECT_IMAGE', "Choisissez une image à joindre à l'article");
 define('_MD_NEWS_CURENT_PICTURE', "Image actuelle");
+
 // Added in version 1.67
 define('_MD_NEWS_BOOKMARK_TO_FACEBOOK', "Mettre en favoris dans Faceboom");
 define('_MD_NEWS_BOOKMARK_TO_TWITTER', "Mettre en favoris dans Twitter");
@@ -170,7 +171,5 @@ define("_MD_NEWS_AT", "à");
 define("_MD_NEWS_CATEGORYS", "Catégories");
 define("_MD_NEWS_STORIES", "Articles");
 define("_MD_NEWS_AUTHORS", "Auteurs");
-define("_MD_NEWS_POSTED_BY", "Proposé par");
-
 
 ?>

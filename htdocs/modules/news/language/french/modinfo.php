@@ -236,7 +236,7 @@ define ('_MI_NEWS_CODE_READMORE', 'Code de remplacement pour /Lire la suite/');
 define ('_MI_NEWS_CODE_READMORE_DESC', "Remplace ce code dans le scoop par un lien sur l'article complet");
 
 define ('_MI_NEWS_ALL_AUTHORS', "Tous les auteurs");
-
+define ('_MI_NEWS_CLONE_MODULE',"Clone du module");
 
 
 

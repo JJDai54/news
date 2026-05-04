@@ -18,12 +18,12 @@ Extensions=*.*
 [Project tree]
 _news
 	+news
-		+_JJD
+		-_JJD
 			..\..\..\..\..\JJD-Framework\projet\htdocs\Frameworks\JJD-Framework\css\style-item-design.css
 			..\..\..\..\..\JJD-Framework\projet\htdocs\Frameworks\JJD-Framework\css\style-item-color-old.css
 			..\..\..\..\..\JJD-Framework\projet\htdocs\Frameworks\JJD-Framework\css\style-item-color.css
 			..\..\..\..\..\JJD-Framework\projet\htdocs\Frameworks\JJD-Framework\css\style-item-design-old.css
-		+admin
+		-admin
 			admin\about.php
 			admin\admin_footer.php
 			admin\admin_header.php
@@ -113,7 +113,7 @@ _news
 			class\xoopsstory.php
 			class\xoopstopic.php
 			class\xoopstree.php
-		+docs
+		-docs
 			docs\changelog.txt
 			docs\credits.txt
 			docs\index.html
@@ -127,7 +127,7 @@ _news
 			-modules
 				extra\modules\index.html
 			extra\index.html
-		+include
+		-include
 			+versions
 				include\versions\index.html
 				include\versions\version-01-70.php
@@ -188,11 +188,11 @@ _news
 		-seo
 			seo\.htaccess
 			seo\index.html
-		-sql
+		+sql
 			sql\index.html
 			sql\mysql.sql
-		-templates
-			+blocks
+		+templates
+			-blocks
 				templates\blocks\index.html
 				templates\blocks\news_block_archives.tpl
 				templates\blocks\news_block_bigstory.tpl
@@ -253,26 +253,62 @@ _news
 		whoswho.php
 		xoops_version.php
 [Open project files]
-0=docs\changelog.txt
-1=xoops_version.php
-2=include\versions\version-01-80.php
-3=include\versions\version-01-90.php
-4=docs\todo.txt
+0=xoops_version.php
+1=include\versions\version-01-90.php
+2=sql\mysql.sql
+3=class\xoopsstory.php
+4=include\search.inc.php
+5=class\news_topics.php
+6=class\class.newstopic.php
+7=include\storyform.inc.php
+8=language\french\main.php
+9=language\english\main.php
+10=templates\news_item.tpl
+11=article.php
+12=index.php
+13=language\english\modinfo.php
 [Selected Project Files]
 Main=
-Selected=docs\changelog.txt
-[docs\changelog.txt]
-TopLine=1
-Caret=1,4
+Selected=templates\news_item.tpl
 [xoops_version.php]
-TopLine=7
-Caret=54,52
-[include\versions\version-01-80.php]
-TopLine=1
-Caret=1,1
+TopLine=284
+Caret=1,284
 [include\versions\version-01-90.php]
 TopLine=1
-Caret=38,23
-[docs\todo.txt]
+Caret=24,23
+[sql\mysql.sql]
+TopLine=47
+Caret=13,92
+[class\xoopsstory.php]
+TopLine=22
+Caret=1,67
+[include\search.inc.php]
+TopLine=86
+Caret=7,137
+[class\news_topics.php]
+TopLine=25
+Caret=32,77
+[class\class.newstopic.php]
+TopLine=34
+Caret=1,46
+[include\storyform.inc.php]
 TopLine=1
-Caret=1,2
+Caret=1,1
+[language\french\main.php]
+TopLine=122
+Caret=10,141
+[language\english\main.php]
+TopLine=104
+Caret=1,159
+[templates\news_item.tpl]
+TopLine=39
+Caret=201,49
+[article.php]
+TopLine=308
+Caret=39,341
+[index.php]
+TopLine=333
+Caret=20,350
+[language\english\modinfo.php]
+TopLine=151
+Caret=3,202

@@ -53,6 +53,19 @@ class MyXoopsStory
     public $topicstable;
     public $comments;
 
+    public $story_type;
+    public $topic_id;
+    public $topic_pid;
+    public $topic_weight;
+    public $menu;
+    public $topic_frontpage;
+    public $topic_rssurl;
+    public $topic_description;
+    public $topic_color;
+    public $topic_color_set;
+    public $topic_actif;
+
+
     /**
      * @param $storyid
      */

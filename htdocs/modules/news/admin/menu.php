@@ -84,7 +84,7 @@ $adminmenu[] = [
     'link'  => 'admin/index.php?op=stats',
     'icon'  => $pathIcon32 . '/stats.png'
 ];
-define ('_MI_NEWS_CLONE_MODULE',"Clone du module");
+
 $adminmenu[] = [
     'title' => _MI_NEWS_CLONE_MODULE,
     'link'  => 'admin/clone.php',

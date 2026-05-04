@@ -134,6 +134,6 @@ function news_search($queryarray, $andor, $limit, $offset, $userid)
             }
         }
     }
-
+    //echo "<hr>News<pre>".  print_r($ret, true) .  "</pre><hr>";
     return $ret;
 }

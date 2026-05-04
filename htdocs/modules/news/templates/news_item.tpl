@@ -46,7 +46,7 @@
 
     <{* <{if $attached_files_count > 0}> *}>
     <{if $story.files_attached}>
-        <div class="item-info <{$story.topic_color_set}>-item-legend"><img src="<{$pathIcon16}>/attach.png" title="<{$smarty.const._MD_NEWS_ATTACHEDLIB}>"> <b><{$lang_attached_files}></b>
+        <div class="item-info <{$story.topic_color_set}>-item-legend"><img src="<{$pathIcon16}>/attach.png" title="<{$smarty.const._MD_NEWS_ATTACHEDLIB}>"> <b><{$smarty.const._MD_NEWS_ATTACHEDFILES}> </b>
              <a href='<{$story.url_to_story}>' title=''>
              <{$attached_files_count}> <{$smarty.const._MD_NEWS_ATTACHEDFILES}>
              </a> 
@@ -54,10 +54,10 @@
     <{/if}>
 
 
-    <{* <{if $attached_files_count > 0}> *}>
+     <{if $attached_files_count > 0}>
     <{* <{if $story.files_attached}> *}>
-    <{if $attached_files AND $attached_files|count > 0}>
-        <div class="item-info <{$story.topic_color_set}>-item-legend"><img src="<{$pathIcon16}>/attach.png" title="<{$smarty.const._MD_NEWS_ATTACHEDLIB}>"> <b><{$lang_attached_files}></b>
+<{*    <{if $attached_files AND $attached_files|count > 0}> *}>
+        <div class="item-info <{$story.topic_color_set}>-item-legend"><img src="<{$pathIcon16}>/attach.png" title="<{$smarty.const._MD_NEWS_ATTACHEDLIB}>"> <b><{$smarty.const._MD_NEWS_ATTACHEDFILES}> </b>
              <{$attached_files_count}> <{$smarty.const._MD_NEWS_ATTACHEDFILES}> 
              <{foreach item=onefile from=$attached_files}>
                 <br><a href='<{$onefile.visitlink}>' target='_blank'><{$onefile.file_realname}></a>

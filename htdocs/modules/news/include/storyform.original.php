@@ -108,7 +108,7 @@ if ($approveprivilege && is_object($xoopsUser) && $xoopsUser->isAdmin($xoopsModu
     }
 }
 //echo "<hr>{$authors}<hr>";
-if(!$authors) $authors = $xoopsUser->getVar('name');
+if(!isset($authors)) $authors = $xoopsUser->getVar('name');
 $inpAuthors = new XoopsFormText(_MD_NEWS_AUTHORS,'authors',150,80, $authors);
 $sform->addElement($inpAuthors);
 

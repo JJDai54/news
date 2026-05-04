@@ -37,6 +37,12 @@ class NewsTopic extends MyXoopsTopic
     public $topic_rssurl;
     public $topic_color;
     public $topic_color_set;
+    public $db;
+    public $topic_actif;
+    public $story_type;
+    public $topic_id;
+    public $topic_pid;
+    public $topic_weight;
 
     /**
      * @param int $topicid

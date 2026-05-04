@@ -100,6 +100,7 @@ define('_MD_NEWS_BOOKMARK_TO_YAHOO', 'Bookmark to Yahoo');
 define('_MD_NEWS_NOTYETSTORY', 'Sorry, the selected story has not been published yet. Please come back later and try again.');
 define('_MD_NEWS_SELECT_IMAGE', 'Select a picture to attach to the news');
 define('_MD_NEWS_CURENT_PICTURE', 'Current picture');
+
 // Added in version 1.67
 define('_MD_NEWS_BOOKMARK_TO_FACEBOOK', 'Bookmark to Facebook');
 define('_MD_NEWS_BOOKMARK_TO_TWITTER', 'Bookmark to Twitter');
@@ -113,11 +114,45 @@ define('_MD_NEWS_BOOKMARK_TO_BALATARIN', 'Bookmark to Balatarin');
 define('_MD_NEWS_BOOKMARK_TO_GOOGLEPLUS', 'Bookmark to Google Plus');
 define('_MD_NEWS_BOOKMARK_TO_GOOGLEREADER', 'Bookmark to Google Reader');
 define('_MD_NEWS_BOOKMARK_TO_GOOGLEBOOKMARKS', 'Bookmark to Google Bookmarks');
-define('_MD_NEWS_DELETE', 'Delete');
-define('_MD_NEWS_EDIT', 'Edit');
-define('_MD_NEWS_SUBTITLE', 'Subtitle: ');
-define('_MD_NEWS_SELECT_IMAGE_DESC', 'Description of selected image: ');
 
-define('_MD_NEWS_NOSUBJECT', '(No Subject)');
+define('_MD_NEWS_DELETE', "Supprimer");
+define('_MD_NEWS_EDIT', "Editer");
+define('_MD_NEWS_SUBTITLE', "Sous-titre : ");
+define('_MD_NEWS_SELECT_IMAGE_DESC', "Description de l'image sélectionnée : ");
+define('_MD_NEWS_CATEGORYS_ALL', "(*) toutes les catégories");
+
+define ('_MD_NEWS_ORDER_BY', "Ttrié par");
+define ('_MD_NEWS_ORDER_BY_TITLE_ASC', "Titres de alphabètique naturel");
+define ('_MD_NEWS_ORDER_BY_TITLE_DESC', "Titres de alphabètique inverse");
+define ('_MD_NEWS_ORDER_BY_DATE_ASC', "Dates chronologiques");
+define ('_MD_NEWS_ORDER_BY_DATE_DESC', "Dates récentes en premier");
+define ('_MD_NEWS_ORDER_BY_NB_VIEWS_ASC', "les moins Vus en premier");
+define ('_MD_NEWS_ORDER_BY_NB_VIEWS_DESC', "Les plus vus en premier");
+
+/**
+ * @translation     Communauté Francophone des Utilisateurs de Xoops
+ * @specification   _LANGCODE: fr
+ * @specification   _CHARSET: UTF-8 sans Bom
+ * Mis à jour par Cesag le 16 Mai 2012
+ * @version         $Id $
+**/
+
+define("_MD_NEWS_ALL_STORIES", "Tous les articles");
+
+//JJDai - Ajout des selection sur l'expiration des articles
+//define("_MD_NEWS_EN_COURS", "En cours");
+define("_MD_NEWS_ACTIFS", "Actifs");
+define("_MD_NEWS_NON_EXPIRED", "Non expirés");
+define("_MD_NEWS_EXPIRED", "Expirés");
+define("_MD_NEWS_ALL", "Tous");
+define("_MD_NEWS_PERMANENT", "Permanents");
+//define("_MD_NEWS_STATUS", "Status");
+define("_MD_NEWS_ARTICLES", "Articles");
+define("_MD_NEWS_THE", "le");
+define("_MD_NEWS_AT", "à");
+
+define("_MD_NEWS_CATEGORYS", "Catégories");
+define("_MD_NEWS_STORIES", "Articles");
 define("_MD_NEWS_AUTHORS", "Auteurs");
 
+?>

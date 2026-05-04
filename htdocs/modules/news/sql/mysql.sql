@@ -68,7 +68,7 @@ CREATE TABLE news_topics (
   topic_title       VARCHAR(255)         NOT NULL DEFAULT '',
   topic_weight      SMALLINT(4) UNSIGNED NOT NULL DEFAULT '0',
   topic_imgurl      VARCHAR(50)          NOT NULL DEFAULT '',
-  menu              TINYINT(1)           NOT NULL DEFAULT '0',
+  topic_menu        TINYINT(1)           NOT NULL DEFAULT '0',
   topic_frontpage   TINYINT(1)           NOT NULL DEFAULT '1',
   topic_rssurl      VARCHAR(255)         NOT NULL DEFAULT '',
   topic_description TEXT                 NOT NULL,

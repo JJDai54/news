@@ -356,8 +356,10 @@ if ($filescount > 0) {
             'file_downloadname' => XOOPS_UPLOAD_URL . '/' . $onefile->getDownloadname()
         ];
     }
-    $xoopsTpl->assign('attached_files', $newsfiles);
+}else{
+        $newsfiles = array();
 }
+    $xoopsTpl->assign('attached_files', $newsfiles);
 
 /**
  * Create page's title

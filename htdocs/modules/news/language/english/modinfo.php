@@ -199,6 +199,6 @@ define('_MI_NEWS_CODE_READMORE', 'Replacement code for /Read more/');
 define('_MI_NEWS_CODE_READMORE_DESC', "Replace this code in the scoop with a link to the full article");
 
 define ('_MI_NEWS_ALL_AUTHORS', "All authors");
-define ('_MD_NEWS_ORDER_BY', "Sorted by");
-
+//define ('_MD_NEWS_ORDER_BY', "Sorted by");
+define ('_MI_NEWS_CLONE_MODULE',"Clone du module");
 
